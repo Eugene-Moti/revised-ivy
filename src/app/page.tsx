@@ -33,72 +33,70 @@ export default function Home() {
   const videoUrl = "/designs/video_bg.mp4";
   return (
     <>
+      {/* Landing Section */}
       <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          className="w-full h-full object-cover"
-          src={videoUrl}
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
-      {/* Navbar */}
-      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-8 py-3 bg-white/90 rounded-none shadow border-b border-gray-200">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/designs/Ivy_logo.png"
-            alt="Ivy Logo"
-            width={48}
-            height={48}
-            className="rounded"
-            priority
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            className="w-full h-full object-cover"
+            src={videoUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
           />
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold text-[#35521a] leading-6">The Ivy Group</span>
-            <span className="text-xs text-gray-600 font-medium">Premium Real Estate</span>
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        {/* Navbar */}
+        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-8 py-3 bg-white/90 rounded-none shadow border-b border-gray-200">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/designs/Ivy_logo.png"
+              alt="Ivy Logo"
+              width={48}
+              height={48}
+              className="rounded"
+              priority
+            />
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-[#35521a] leading-6">The Ivy Group</span>
+              <span className="text-xs text-gray-600 font-medium">Premium Real Estate</span>
+            </div>
           </div>
-        </div>
-        <ul className="flex items-center gap-6 text-base font-medium">
-          <li><a href="#" className="text-[#35521a] font-semibold">Home</a></li>
-          <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Buy</a></li>
-          <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Let</a></li>
-          <li><a href="#" className="text-gray-700 hover:text-[#35521a]">About</a></li>
-          <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Contact</a></li>
-          <li>
-            <a href="#" className="bg-[#35521a] text-white px-5 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition">Reservation</a>
-          </li>
-          <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Blog</a></li>
-        </ul>
-      </nav>
-      {/* Hero Section */}
-      <main className="relative z-20 flex flex-col items-center justify-center w-full flex-1 py-32 min-h-[calc(100vh-80px)]">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-white text-center drop-shadow-lg mb-6">
-          Welcome to The Ivy Group
-        </h1>
-        <p className="text-xl md:text-2xl text-white text-center max-w-2xl drop-shadow mb-8">
-          Premium real estate solutions across Kileleshwa, Westlands, and Kilimani. Experience luxury living at its finest with our carefully curated apartment collections.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#" className="bg-[#35521a] text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-[#466c25] transition">Explore Properties</a>
-          <a href="#" className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-white hover:text-[#35521a] transition">Book Viewing</a>
-        </div>
-      </main>
+          <ul className="flex items-center gap-6 text-base font-medium">
+            <li><a href="#" className="text-[#35521a] font-semibold">Home</a></li>
+            <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Buy</a></li>
+            <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Let</a></li>
+            <li><a href="#" className="text-gray-700 hover:text-[#35521a]">About</a></li>
+            <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Contact</a></li>
+            <li>
+              <a href="#" className="bg-[#35521a] text-white px-5 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition">Reservation</a>
+            </li>
+            <li><a href="#" className="text-gray-700 hover:text-[#35521a]">Blog</a></li>
+          </ul>
+        </nav>
+        {/* Hero Section */}
+        <main className="relative z-20 flex flex-col items-center justify-center w-full flex-1 py-32 min-h-[calc(100vh-80px)]">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white text-center drop-shadow-lg mb-6">
+            Welcome to The Ivy Group
+          </h1>
+          <p className="text-xl md:text-2xl text-white text-center max-w-2xl drop-shadow mb-8">
+            Premium real estate solutions across Kileleshwa, Westlands, and Kilimani. Experience luxury living at its finest with our carefully curated apartment collections.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#" className="bg-[#35521a] text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-[#466c25] transition">Explore Properties</a>
+            <a href="#" className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-white hover:text-[#35521a] transition">Book Viewing</a>
+          </div>
+        </main>
       </section>
-
-
-
 
       {/* Premium Locations Section */}
       <section className="relative z-10 w-full flex flex-col items-center py-20 bg-white/95">
         <h2 className="text-3xl md:text-4xl font-bold text-[#35521a] text-center mb-2">Our Premium Locations</h2>
         <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl">
-          Three exceptional developments across Nairobi's most prestigious neighborhoods
+          Three exceptional developments across Nairobi&apos;s most prestigious neighborhoods
         </p>
-  <div className="w-full max-w-6xl flex overflow-x-auto gap-8 px-4 animate-horizontal-scroll">
+        <div className="w-full max-w-6xl flex overflow-x-auto gap-8 px-4 animate-horizontal-scroll">
           {/* Blossoms Ivy Card */}
           <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover-animate-shake">
             <div className="w-full h-36 mb-4 overflow-hidden rounded-xl">
@@ -132,31 +130,29 @@ export default function Home() {
         </div>
       </section>
       {/* Horizontal scroll animation for Premium Locations */}
-      <style>
-        {`
-          @keyframes horizontal-scroll {
-            0% { transform: translateX(0); }
-            20% { transform: translateX(0); }
-            40% { transform: translateX(-33%); }
-            60% { transform: translateX(-66%); }
-            80% { transform: translateX(-33%); }
-            100% { transform: translateX(0); }
-          }
-          .animate-horizontal-scroll {
-            animation: horizontal-scroll 18s linear infinite;
-          }
-        `}
-      </style>
+      <style>{`
+        @keyframes horizontal-scroll {
+          0% { transform: translateX(0); }
+          20% { transform: translateX(0); }
+          40% { transform: translateX(-33%); }
+          60% { transform: translateX(-66%); }
+          80% { transform: translateX(-33%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-horizontal-scroll {
+          animation: horizontal-scroll 18s linear infinite;
+        }
+      `}</style>
 
       {/* Apartment Collections Section */}
       <section className="relative w-full flex flex-col items-center py-20 bg-[#f7f7f7] overflow-hidden">
         {/* Apartment Collections Background Image Slider */}
         <ApartmentCollectionsBgSlider />
-  <h2 className="text-3xl md:text-4xl font-bold text-[#35521a] text-center mb-2 drop-shadow-lg">Apartment Collections</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#35521a] text-center mb-2 drop-shadow-lg">Apartment Collections</h2>
         <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl">
           Choose from our range of meticulously designed living spaces
         </p>
-  <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 px-8 xl:px-16">
+        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 px-8 xl:px-16">
           {/* 1-Bedroom Apartments */}
           <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover-animate-shake">
             <div className="w-full h-36 mb-4 overflow-hidden rounded-xl">
@@ -230,7 +226,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
       </section>
 
       {/* Gallery Section */}
