@@ -18,7 +18,11 @@ export default function GallerySection() {
     "/designs/IMG-20250709-WA0090.jpg",
   ];
   const groupSize = 3;
-  const groups = [];
+interface GalleryGroup {
+    images: string[];
+}
+
+const groups: string[][] = [];
   for (let i = 0; i < images.length; i += groupSize) {
     groups.push(images.slice(i, i + groupSize));
   }
