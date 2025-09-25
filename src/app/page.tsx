@@ -30,9 +30,39 @@ function ApartmentCollectionsBgSlider() {
   );
 }
 
+// Modal Contact Form
+function ContactFormModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm animate-fade-in-fast" onClick={onClose}>
+      <div
+        className="bg-gradient-to-br from-[#f7faf7] to-[#e9ede9] rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4 relative animate-slide-up"
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          className="absolute top-3 right-3 text-gray-400 hover:text-[#39591c] text-2xl font-bold transition"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          &times;
+        </button>
+        <h3 className="text-2xl font-bold text-[#39591c] mb-6 text-center">Get In Touch</h3>
+        <form className="space-y-4">
+          <input type="text" placeholder="Your Name" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] placeholder:text-gray-500 bg-white/90" />
+          <input type="email" placeholder="Your Email" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] placeholder:text-gray-500 bg-white/90" />
+          <input type="text" placeholder="Phone Number" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] placeholder:text-gray-500 bg-white/90" />
+          <textarea placeholder="Your Message" rows={4} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] placeholder:text-gray-500 bg-white/90" />
+          <button type="submit" className="w-full bg-[#39591c] text-white py-3 rounded-lg font-semibold text-lg hover:bg-[#2e4717] transition-all duration-200 shadow-md hover:shadow-lg scale-100 hover:scale-105">Send Message</button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const videoUrl = "/designs/video_bg.mp4";
   const [navOpen, setNavOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
   return (
     <>
       {/* Landing Section */}
@@ -77,7 +107,7 @@ export default function Home() {
               <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Buy</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Let</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">About</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Contact</a></li>
+              <li><a href="/contact" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Contact</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Blog</a></li>
             </ul>
             <a href="#" className="ml-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
@@ -90,7 +120,7 @@ export default function Home() {
               <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Buy</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Let</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>About</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Contact</a></li>
+              <li><a href="/contact" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Contact</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Blog</a></li>
             </ul>
             <a href="#" className="bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition text-center mt-4" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
@@ -132,7 +162,12 @@ export default function Home() {
 
       {/* Premium Locations Section */}
   <section className="relative z-10 w-full flex flex-col items-center py-20 bg-white/95">
-  <h2 className="text-3xl md:text-4xl font-bold text-[#35521a] text-center mb-2">Our Premium Locations</h2>
+  <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-[#151c27] text-center mb-2">Our Premium Locations</h2>
+  <div className="flex items-center justify-center w-full mb-8">
+    <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
+    <span className="text-[#e5d7a3] text-2xl">★</span>
+    <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
+  </div>
   <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl">
           Three exceptional developments across Nairobi&apos;s most prestigious neighborhoods
         </p>
@@ -261,7 +296,7 @@ export default function Home() {
 
       {/* Get In Touch Section - Modern Card Style */}
   {/* Get In Touch Section: light sage background */}
-  <section className="w-full py-24 flex flex-col items-center justify-center bg-[#f6f9f6]">
+  <section className="w-full py-24 flex flex-col items-center justify-center bg-[#e9ede9]">
         <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 text-center mb-2 tracking-wide">Get in touch</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
@@ -271,36 +306,54 @@ export default function Home() {
         <p className="text-lg text-gray-500 text-center mb-16 max-w-2xl mx-auto">Subscribe to our newsletters to be the first to hear the latest news about what is happening in the real estate market.</p>
   <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-2 md:px-4 mb-12 animate-fade-in">
           {/* Email Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start transition hover:shadow-2xl">
-            <span className="text-4xl mb-4 text-[#d6c07a]">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-10 h-10"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" /></svg>
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
+            <span className="text-3xl mb-4 text-[#d6c07a]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" /></svg>
             </span>
-            <div className="text-xl font-serif font-semibold text-gray-900 mb-2">SEND US AN EMAIL</div>
-            <div className="text-gray-600 mb-2">Email Via:</div>
-            <div className="text-base font-medium text-gray-700 mb-4">info@theivygroup.co.ke</div>
-            <div className="h-1 w-16 bg-[#e5d7a3] mb-2" />
-            <a href="mailto:info@theivygroup.co.ke" className="text-[#d6c07a] font-bold mt-2 hover:underline">Get in touch</a>
+            <div>
+              <div className="text-xl font-serif font-normal text-gray-900 mb-2 tracking-wide">The Ivy Group</div>
+              <div className="text-gray-600 mb-1">Email Via:</div>
+              <div className="text-base text-gray-700 mb-6">blossomivymarketing@gmail.com</div>
+            </div>
+            <div className="flex flex-col items-start gap-1 mt-auto">
+              <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
+              <button
+                type="button"
+                className="text-[#d6c07a] font-bold hover:underline text-left mt-0 focus:outline-none"
+                onClick={() => setContactModalOpen(true)}
+              >
+                Get in touch
+              </button>
+            </div>
           </div>
           {/* Call Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start transition hover:shadow-2xl">
-            <span className="text-4xl mb-4 text-[#d6c07a]">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-10 h-10"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25m-19.5 0v.243a2.25 2.25 0 00.659 1.591l7.591 7.591a2.25 2.25 0 003.182 0l7.591-7.591A2.25 2.25 0 0021.75 6.993V6.75" /></svg>
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
+            <span className="text-3xl mb-4 text-[#d6c07a]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25m-19.5 0v.243a2.25 2.25 0 00.659 1.591l7.591 7.591a2.25 2.25 0 003.182 0l7.591-7.591A2.25 2.25 0 0021.75 6.993V6.75" /></svg>
             </span>
-            <div className="text-xl font-serif font-semibold text-gray-900 mb-2">CALL US</div>
-            <div className="text-gray-600 mb-2">Call our sales representative via</div>
-            <div className="text-base font-medium text-gray-700 mb-4">+254 700 000 000</div>
-            <div className="h-1 w-16 bg-[#e5d7a3] mb-2" />
-            <a href="tel:+254700000000" className="text-[#d6c07a] font-bold mt-2 hover:underline">Get in touch</a>
+            <div>
+              <div className="text-xl font-serif font-normal text-gray-900 mb-2 tracking-wide">CALL US</div>
+              <div className="text-gray-600 mb-1">Call us via:</div>
+              <div className="text-base text-gray-700 mb-6">+254798888866<br/>+254799008564</div>
+            </div>
+            <div className="flex flex-col items-start gap-1 mt-auto">
+              <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
+              <a href="tel:+254798888866" className="text-[#d6c07a] font-bold hover:underline text-left mt-0">Get in touch</a>
+            </div>
           </div>
           {/* Visit Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start transition hover:shadow-2xl">
-            <span className="text-4xl mb-4 text-[#d6c07a]">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-10 h-10"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" /></svg>
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
+            <span className="text-3xl mb-4 text-[#d6c07a]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" /></svg>
             </span>
-            <div className="text-xl font-serif font-semibold text-gray-900 mb-2">VISIT OUR OFFICES</div>
-            <div className="text-gray-600 mb-2">Westlands, Nairobi, Kenya</div>
-            <div className="h-1 w-16 bg-[#e5d7a3] mb-2" />
-            <a href="#" className="text-[#d6c07a] font-bold mt-2 hover:underline">Visit Us</a>
+            <div>
+              <div className="text-xl font-serif font-normal text-gray-900 mb-2 tracking-wide">VISIT OUR OFFICES</div>
+              <div className="text-gray-600 mb-1">Gatundu Road, Kileleshwa.</div>
+            </div>
+            <div className="flex flex-col items-start gap-1 mt-auto">
+              <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
+              <a href="#" className="text-[#d6c07a] font-bold hover:underline text-left mt-0">Visit Us</a>
+            </div>
           </div>
         </div>
         <div className="w-full flex justify-center mt-12">
@@ -361,17 +414,18 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-gray-400 text-sm">
           <div>© {new Date().getFullYear()} The Ivy Group. All rights reserved.</div>
-          {/* WhatsApp Floating Button with Tooltip */}
-          <div className="fixed bottom-8 right-8 flex items-center z-50 group">
-            <div className="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-200 mr-3 bg-[#25D366] text-white font-semibold px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-base pointer-events-none select-none">
-              WhatsApp Us !
-            </div>
-            <a href="#" className="bg-[#25D366] rounded-full p-4 shadow-lg hover:scale-110 transition group" aria-label="WhatsApp">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="32" height="32"><path d="M20.52 3.48A12 12 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.18-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.7 0-3.36-.33-4.92-.98l-.35-.15-3.67.96.98-3.58-.18-.37A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.65 0 5.15 1.03 7.03 2.9A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.62-.47-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.34-.26.27-1 1-.97 2.43.03 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
-            </a>
-          </div>
         </div>
       </footer>
+        {/* WhatsApp Floating Button with Tooltip */}
+        <div className="fixed bottom-8 right-8 flex items-center z-50 group">
+          <div className="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-200 mr-3 bg-[#25D366] text-white font-semibold px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-base pointer-events-none select-none">
+            WhatsApp Us !
+          </div>
+          <a href="https://wa.me/254798888866" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] rounded-full p-4 shadow-lg hover:scale-110 transition group" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="32" height="32"><path d="M20.52 3.48A12 12 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.18-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.7 0-3.36-.33-4.92-.98l-.35-.15-3.67.96.98-3.58-.18-.37A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.65 0 5.15 1.03 7.03 2.9A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.62-.47-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.34-.26.27-1 1-.97 2.43.03 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
+          </a>
+        </div>
+      <ContactFormModal open={contactModalOpen} onClose={() => setContactModalOpen(false)} />
     </>
   );
 }
