@@ -4,6 +4,7 @@
 import Image from "next/image";
 import GallerySection from "./GallerySection";
 import { useState, useEffect } from "react";
+import GalleryCard from "./GalleryCard";
 
 const apartmentBgImages = [
   "/designs/IMG-20250710-WA0028.jpg",
@@ -96,8 +97,8 @@ export default function Home() {
         </nav>
         {/* Hero Section */}
   <main className="relative z-20 flex flex-col items-center justify-center w-full flex-1 pt-1 md:pt-2 pb-10 min-h-[calc(100vh-80px)]">
-          <div className="flex flex-col items-center w-full max-w-2xl bg-black/60 rounded-xl px-6 py-6 mt-0 shadow-lg absolute left-1/2 -translate-x-1/2 top-2 md:top-6">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[#f7e9c7] text-center drop-shadow-2xl mb-4 font-serif whitespace-nowrap" style={{ fontFamily: 'Merriweather, Times New Roman, Times, serif' }}>
+          <div className="flex flex-col items-center w-full max-w-2xl rounded-xl px-6 py-6 mt-0 shadow-lg absolute left-1/2 -translate-x-1/2 top-2 md:top-6">
+            <h1 className="text-3xl md:text-5xl font-extrabold text-[#2d2d2d] text-center drop-shadow-2xl mb-4 font-serif whitespace-nowrap" style={{ fontFamily: 'Merriweather, Times New Roman, Times, serif' }}>
               Welcome to The Ivy Group
             </h1>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -127,14 +128,14 @@ export default function Home() {
             <p className="text-gray-600 mb-6 relative z-10">Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience.</p>
             <a href="#" className="bg-[#35521a] text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-[#466c25] transition relative z-10">Explore Blossoms</a>
           </div>
-          {/* Luckin Ivy Card */}
+          {/* Luckinn Ivy Card */}
           <div className="relative group bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0" style={{backgroundImage: 'url(/designs/Luckinn Ivy.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl">
-              <img src="/designs/Exterior_04_IA.png" alt="Luckin Ivy" className="object-cover w-full h-full" />
+              <img src="/designs/Exterior_04_IA.png" alt="Luckinn Ivy" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-bold text-[#35521a] mb-1 relative z-10">Luckin Ivy</h3>
+            <h3 className="text-2xl font-bold text-[#35521a] mb-1 relative z-10">Luckinn Ivy</h3>
             <div className="text-gray-700 font-medium mb-2 relative z-10">Westlands</div>
             <p className="text-gray-600 mb-6 relative z-10">Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families.</p>
             <a href="#" className="bg-[#35521a] text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-[#466c25] transition relative z-10">Explore Luckin</a>
@@ -155,93 +156,81 @@ export default function Home() {
       </section>
 
       {/* Apartment Collections Section */}
-  <section className="relative w-full flex flex-col items-center py-20 bg-[#f7f7f7] overflow-hidden">
-  {/* Apartment Collections Background Image Slider removed */}
-  <h2 className="text-3xl md:text-4xl font-bold text-[#35521a] text-center mb-2 drop-shadow-lg">Apartment Collections</h2>
-  <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl">
-          Choose from our range of meticulously designed living spaces
-        </p>
-        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 px-8 xl:px-16">
-          {/* 1-Bedroom Apartments */}
-          <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover-animate-shake">
-            <div className="w-full h-36 mb-4 overflow-hidden rounded-xl">
-              <img src="/designs/IMG-20250710-WA0028.jpg" alt="1-Bedroom Apartment" className="object-cover w-full h-full" />
-            </div>
-            <h3 className="text-xl font-bold text-[#35521a] mb-1">1-Bedroom Apartments</h3>
-            <div className="text-[#bfa544] font-bold text-lg mb-2">From KSh 6.5M</div>
-            <p className="text-gray-600 mb-4">Modern 1-bedroom units ideal for singles or couples, featuring open-plan living and stylish finishes.</p>
-            <div className="flex items-center gap-4 text-gray-500 text-sm mb-6">
-              <span>1 Bedroom</span>
-              <span>1 Bathroom</span>
-              <span>50-80 sqm</span>
-            </div>
-            <div className="flex gap-3 w-full">
-              <button className="bg-[#35521a] text-white px-4 py-2 rounded-lg font-semibold flex-1">View All</button>
-              <button className="border border-[#35521a] text-[#35521a] px-4 py-2 rounded-lg font-semibold flex-1">Download Brochure</button>
-            </div>
-          </div>
-          {/* 2-Bedroom Apartments */}
-          <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover-animate-shake">
-            <div className="w-full h-36 mb-4 overflow-hidden rounded-xl">
-              <img src="/designs/IMG-20250710-WA0044.jpg" alt="2-Bedroom Apartment" className="object-cover w-full h-full" />
-            </div>
-            <h3 className="text-xl font-bold text-[#35521a] mb-1">2-Bedroom Apartments</h3>
-            <div className="text-[#bfa544] font-bold text-lg mb-2">From KSh 8.5M</div>
-            <p className="text-gray-600 mb-4">Spacious 2-bedroom units perfect for small families or professionals. Features include modern kitchen, ensuite bathrooms, and private balconies.</p>
-            <div className="flex items-center gap-4 text-gray-500 text-sm mb-6">
-              <span>2 Bedrooms</span>
-              <span>2 Bathrooms</span>
-              <span>85-120 sqm</span>
-            </div>
-            <div className="flex gap-3 w-full">
-                <button className="bg-[#35521a] text-white px-4 py-2 rounded-lg font-semibold flex-1">View All</button>
-              <button className="border border-[#35521a] text-[#35521a] px-4 py-2 rounded-lg font-semibold flex-1">Download Brochure</button>
-            </div>
-          </div>
-          {/* 3-Bedroom Apartments */}
-          <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover-animate-shake">
-            <div className="w-full h-36 mb-4 overflow-hidden rounded-xl">
-              <img src="/designs/IMG-20250710-WA0061.jpg" alt="3-Bedroom Apartment" className="object-cover w-full h-full" />
-            </div>
-            <h3 className="text-xl font-bold text-[#35521a] mb-1">3-Bedroom Apartments</h3>
-            <div className="text-[#bfa544] font-bold text-lg mb-2">From KSh 12.5M</div>
-            <p className="text-gray-600 mb-4">Premium 3-bedroom units with master ensuite, family bathroom, open-plan living, and stunning city views.</p>
-            <div className="flex items-center gap-4 text-gray-500 text-sm mb-6">
-              <span>3 Bedrooms</span>
-              <span>3 Bathrooms</span>
-              <span>120-150 sqm</span>
-            </div>
-            <div className="flex gap-3 w-full">
-                <button className="bg-[#35521a] text-white px-4 py-2 rounded-lg font-semibold flex-1">View All</button>
-              <button className="border border-[#35521a] text-[#35521a] px-4 py-2 rounded-lg font-semibold flex-1">Download Brochure</button>
-            </div>
-          </div>
-          {/* 4-Bedroom Apartments */}
-          <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover-animate-shake">
-            <div className="w-full h-36 mb-4 overflow-hidden rounded-xl">
-              <img src="/designs/IMG-20250827-WA0056.jpg" alt="4-Bedroom Apartment" className="object-cover w-full h-full" />
-            </div>
-            <h3 className="text-xl font-bold text-[#35521a] mb-1">4-Bedroom Apartments</h3>
-            <div className="text-[#bfa544] font-bold text-lg mb-2">From KSh 16.5M</div>
-            <p className="text-gray-600 mb-4">Expansive 4-bedroom apartments for larger families, featuring luxury finishes, multiple balconies, and ample living space.</p>
-            <div className="flex items-center gap-4 text-gray-500 text-sm mb-6">
-              <span>4 Bedrooms</span>
-              <span>4 Bathrooms</span>
-              <span>150-200 sqm</span>
-            </div>
-            <div className="flex gap-3 w-full">
-                <button className="bg-[#35521a] text-white px-4 py-2 rounded-lg font-semibold flex-1">View All</button>
-              <button className="border border-[#35521a] text-[#35521a] px-4 py-2 rounded-lg font-semibold flex-1">Download Brochure</button>
-            </div>
-          </div>
+  <section className="w-full flex flex-col items-center py-20 bg-[#fcfbf7]">
+  <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 text-center mb-2 tracking-wide">Apartment Collections</h2>
+  {/* Apartment Collections: soft cream background */}
+    <div className="flex items-center justify-center w-full mb-8">
+      <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
+      <span className="text-[#e5d7a3] text-2xl">★</span>
+      <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
+    </div>
+    <p className="text-lg text-gray-500 text-center mb-16 max-w-2xl mx-auto">Choose from our range of meticulously designed living spaces</p>
+    <div className="w-full max-w-7xl flex flex-row flex-wrap gap-8 px-0 justify-start">
+      {/* 1-Bedroom */}
+      <div className="relative rounded-xl overflow-hidden shadow-xl w-[270px] h-[270px] flex items-center justify-center group">
+        <Image src="/designs/IMG-20250709-WA0082.jpg" alt="1 Bedroom" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition duration-300 flex flex-col items-center justify-center">
+          <span className="text-white text-lg font-semibold tracking-wide mb-6">1 BEDROOM</span>
+          <button className="bg-[#e5d7a3] text-[#222] font-bold px-7 py-2 rounded-full shadow hover:bg-[#d6c07a] transition text-base">EXPLORE</button>
+        </div>
+      </div>
+      {/* 2-Bedroom */}
+      <div className="relative rounded-xl overflow-hidden shadow-xl w-[270px] h-[270px] flex items-center justify-center group">
+        <Image src="/designs/IMG-20250709-WA0083.jpg" alt="2 Bedroom" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition duration-300 flex flex-col items-center justify-center">
+          <span className="text-white text-lg font-semibold tracking-wide mb-6">2 BEDROOM</span>
+          <button className="bg-[#e5d7a3] text-[#222] font-bold px-7 py-2 rounded-full shadow hover:bg-[#d6c07a] transition text-base">EXPLORE</button>
+        </div>
+      </div>
+      {/* 3-Bedroom */}
+      <div className="relative rounded-xl overflow-hidden shadow-xl w-[270px] h-[270px] flex items-center justify-center group">
+        <Image src="/designs/IMG-20250709-WA0084.jpg" alt="3 Bedroom" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition duration-300 flex flex-col items-center justify-center">
+          <span className="text-white text-lg font-semibold tracking-wide mb-6">3 BEDROOM</span>
+          <button className="bg-[#e5d7a3] text-[#222] font-bold px-7 py-2 rounded-full shadow hover:bg-[#d6c07a] transition text-base">EXPLORE</button>
+        </div>
+      </div>
+      {/* 4-Bedroom */}
+      <div className="relative rounded-xl overflow-hidden shadow-xl w-[270px] h-[270px] flex items-center justify-center group">
+        <Image src="/designs/IMG-20250709-WA0085.jpg" alt="4 Bedroom" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition duration-300 flex flex-col items-center justify-center">
+          <span className="text-white text-lg font-semibold tracking-wide mb-6">4 BEDROOM</span>
+          <button className="bg-[#e5d7a3] text-[#222] font-bold px-7 py-2 rounded-full shadow hover:bg-[#d6c07a] transition text-base">EXPLORE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      {/* Gallery Section */}
+  {/* Gallery Section - Modern Card Style */}
+  <section className="w-full flex flex-col items-center py-20 bg-[#f7f7fa]">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 text-center mb-2 tracking-wide">Gallery</h2>
+        <div className="flex items-center justify-center w-full mb-8">
+          <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
+          <span className="text-[#e5d7a3] text-2xl">★</span>
+          <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
+        </div>
+        <p className="text-lg text-gray-500 text-center mb-16 max-w-2xl mx-auto">Explore our stunning apartment renders and completed projects</p>
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+          {/* Gallery Images - Use the same images as before */}
+          <GalleryCard img="/designs/IMG-20250709-WA0079.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0080.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0081.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0082.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0083.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0084.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0085.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0086.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0087.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0088.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0089.jpg" />
+          <GalleryCard img="/designs/IMG-20250709-WA0090.jpg" />
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <GallerySection />
-
       {/* Get In Touch Section - Modern Card Style */}
-      <section className="w-full py-24 flex flex-col items-center justify-center bg-[#fcfbf7]">
+  {/* Get In Touch Section: light sage background */}
+  <section className="w-full py-24 flex flex-col items-center justify-center bg-[#f6f9f6]">
         <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 text-center mb-2 tracking-wide">Get in touch</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
@@ -249,7 +238,7 @@ export default function Home() {
           <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
         </div>
         <p className="text-lg text-gray-500 text-center mb-16 max-w-2xl mx-auto">Subscribe to our newsletters to be the first to hear the latest news about what is happening in the real estate market.</p>
-        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 px-4 mb-12">
           {/* Email Card */}
           <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start transition hover:shadow-2xl">
             <span className="text-4xl mb-4 text-[#d6c07a]">
@@ -283,6 +272,18 @@ export default function Home() {
             <a href="#" className="text-[#d6c07a] font-bold mt-2 hover:underline">Visit Us</a>
           </div>
         </div>
+        <div className="w-full flex justify-center mt-12">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8271820880486!2d36.78276647496567!3d-1.27713609871072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f170056423b43%3A0xac4d412392285ae0!2sBLOSSOM%20IVY%20RESIDENCE!5e0!3m2!1sen!2ske!4v1758788884873!5m2!1sen!2ske"
+            width="100%"
+            height="350"
+            style={{ border: 0, borderRadius: '1rem', minHeight: '300px', maxWidth: '900px' }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Blossom Ivy Residence Map"
+          />
+        </div>
       </section>
       {/* Footer Section */}
       <footer className="w-full bg-[#151c27] text-white pt-12 pb-4 px-4 border-t border-[#35521a]/30 mt-0">
@@ -312,7 +313,7 @@ export default function Home() {
             <div className="font-bold mb-3">Our Locations</div>
             <ul className="space-y-2 text-gray-300">
               <li>Blossoms Ivy - Kileleshwa</li>
-              <li>Luckin Ivy - Westlands</li>
+              <li>Luckinn Ivy - Westlands</li>
               <li>Ivy Park - Kilimani</li>
             </ul>
           </div>
