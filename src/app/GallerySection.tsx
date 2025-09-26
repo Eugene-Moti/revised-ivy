@@ -64,29 +64,29 @@ const groups: string[][] = [];
             groups.map((group, groupIdx) => {
               // Calculate a unique key for each virtual group
               const virtualIdx = (offset - 1) * groups.length + groupIdx;
-              return (
-                <div key={virtualIdx} className="flex w-full min-w-full gap-12 justify-center">
-                  {group.map((img, idx) => (
-                    <div
-                      key={img + '-' + virtualIdx}
-                      className="relative group cursor-pointer"
-                      onClick={() => setModalImg(img)}
-                    >
-                      <Image
-                        src={img}
-                        alt={`Gallery ${groupIdx * groupSize + idx + 1}`}
-                        width={500}
-                        height={260}
-                        className={
-                          "rounded-2xl shadow object-cover w-[420px] h-[200px] md:w-[500px] md:h-[260px] lg:w-[600px] lg:h-[300px] transition-all duration-300 group-hover:scale-110"
-                        }
-                        style={{ zIndex: 1 }}
-                      />
-                      <div className="absolute inset-0 transition-all duration-300 group-hover:bg-black/20" />
-                    </div>
-                  ))}
-                </div>
-              );
+            return (
+              <div key={virtualIdx} className="flex w-full min-w-full h-[200px] md:h-[260px] lg:h-[300px]">
+                {group.map((img, idx) => (
+                  <div
+                    key={img + '-' + virtualIdx}
+                    className="relative group cursor-pointer flex-1 h-full"
+                    onClick={() => setModalImg(img)}
+                    style={{ margin: 0, padding: 0 }}
+                  >
+                    <Image
+                      src={img}
+                      alt={`Gallery ${groupIdx * groupSize + idx + 1}`}
+                      fill
+                      className={
+                        "rounded-2xl shadow object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
+                      }
+                      style={{ zIndex: 1, objectFit: 'cover' }}
+                    />
+                    <div className="absolute inset-0 transition-all duration-300 group-hover:bg-black/20 rounded-2xl" />
+                  </div>
+                ))}
+              </div>
+            );
             })
           )}
         </div>

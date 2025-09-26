@@ -79,7 +79,7 @@ export default function Home() {
           />
         </div>
         {/* Navbar */}
-        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#133322] rounded-none shadow border-b border-[#35521a]/40">
+  <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#133322] rounded-none shadow border-b border-[#35521a]/40">
           <div className="flex items-center gap-3">
             <Image
               src="/designs/Ivy_logo.png"
@@ -110,11 +110,11 @@ export default function Home() {
               <li><a href="/contact" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Contact</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Blog</a></li>
             </ul>
-            <a href="#" className="ml-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
+            <a href="/book-reservation" className="ml-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
           </div>
           {/* Mobile Nav Overlay */}
           <div className={`fixed inset-0 bg-black/60 z-20 transition-opacity duration-300 ${navOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
-          <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[#133322] shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6`}> 
+          <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[#133322] shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6`}>
             <ul className="flex flex-col gap-6 text-lg font-semibold">
               <li><a href="#" className="text-[#f7f7e7] nav-tab" onClick={()=>setNavOpen(false)}>Home</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Buy</a></li>
@@ -123,7 +123,7 @@ export default function Home() {
               <li><a href="/contact" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Contact</a></li>
               <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Blog</a></li>
             </ul>
-            <a href="#" className="bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition text-center mt-4" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
+            <a href="/book-reservation" className="bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition text-center mt-4" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
           </div>
           <style>{`
             .nav-tab::after {

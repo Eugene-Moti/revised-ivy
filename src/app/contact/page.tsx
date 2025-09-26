@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <div className="bg-gradient-to-b from-[#f7f7e7] via-[#e9ede9] to-[#f7f7e7] min-h-screen flex flex-col">
       {/* Navbar */}
-      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#133322] rounded-none shadow border-b border-[#35521a]/40">
+      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#000000] rounded-none shadow border-b border-[#35521a]/40">
         <div className="flex items-center gap-3">
           <Image
             src="/designs/Ivy_logo.png"
@@ -71,7 +71,7 @@ export default function ContactPage() {
             <span className="hidden md:inline">|</span>
             <span>+254 799 008 564</span>
             <span className="hidden md:inline">|</span>
-            <span>blossomivymarketing@gmail.com</span>
+            <span>info@theivygroup.co.ke</span>
           </div>
           <a href="https://wa.me/254798888866" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-[#1ebe57] transition-all text-lg flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"><path fill="#25D366" d="M12 2C6.477 2 2 6.477 2 12c0 1.85.504 3.62 1.46 5.17L2 22l4.93-1.43A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm0 18c-1.61 0-3.18-.39-4.57-1.13l-.33-.18-2.93.85.84-2.86-.21-.34A7.96 7.96 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8Zm4.29-5.71c-.23-.11-1.36-.67-1.57-.75-.21-.08-.36-.11-.51.11-.15.22-.59.75-.72.9-.13.15-.27.17-.5.06-.23-.11-.97-.36-1.85-1.13-.68-.6-1.13-1.34-1.26-1.56-.13-.22-.01-.35.1-.46.1-.1.23-.27.34-.41.11-.14.15-.24.23-.4.08-.16.04-.3-.02-.42-.06-.12-.51-1.23-.7-1.68-.19-.45-.38-.39-.53-.4-.14-.01-.3-.01-.46-.01-.16 0-.42.06-.64.29-.22.23-.84.84-.82 2.04.02 1.2.87 2.36 1 2.52.13.16 1.72 2.6 4.18 3.54.59.25 1.04.4 1.39.51.58.19 1.12.16 1.54.1.47-.07 1.41-.57 1.62-1.13.2-.56.2-1.03.14-1.13-.06-.1-.21-.16-.45-.28Z"/></svg>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 <FaEnvelope className="text-2xl text-[#bfa544] mt-1" />
                 <div>
                   <div className="font-bold text-[#39591c] text-base">Email</div>
-                  <div className="text-gray-700 text-sm">blossomivymarketing@gmail.com</div>
+                  <div className="text-gray-700 text-sm">info@theivygroup.co.ke</div>
                 </div>
               </div>
               <div className="flex items-start gap-4">
