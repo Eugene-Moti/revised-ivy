@@ -1,9 +1,86 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function GetInTouch() {
+  const [navOpen, setNavOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-[#39591c] flex flex-col items-center justify-center py-12 px-4">
-      <div className="max-w-4xl w-full grid md:grid-cols-2 gap-10 items-center">
+    <div className="min-h-screen bg-gradient-to-b from-[#f7f7e7] via-[#e9ede9] to-[#f7f7e7] flex flex-col">
+      {/* Navbar */}
+      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white rounded-none shadow border-b border-gold/40 font-sans font-thin">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/designs/Ivy_logo.png"
+            alt="Ivy Logo"
+            width={48}
+            height={48}
+            className="rounded"
+            priority
+          />
+          <div className="flex flex-col">
+            <span className="text-2xl font-thin text-gold leading-6">The Ivy Group</span>
+            <span className="text-xs font-thin text-blue">Premium Real Estate</span>
+          </div>
+        </div>
+        {/* Hamburger for mobile */}
+        <button className="md:hidden flex flex-col justify-center items-center ml-auto z-30" onClick={() => setNavOpen(!navOpen)} aria-label="Open Menu">
+          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 ${navOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
+        {/* Desktop Nav */}
+        <div className="hidden md:flex flex-1 items-center">
+          <ul className="flex flex-1 justify-center items-center gap-6 text-base font-medium">
+            <li>
+              <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">Home</Link>
+            </li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Buy</a></li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
+            <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
+          </ul>
+          <a href="#" className="ml-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
+        </div>
+        {/* Mobile Nav Overlay */}
+        <div className={`fixed inset-0 bg-black/60 z-20 transition-opacity duration-300 ${navOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
+        <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6 font-sans font-thin`}>
+          <ul className="flex flex-col gap-6 text-lg font-semibold">
+            <li>
+              <Link href="/" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)} aria-label="Home">Home</Link>
+            </li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Buy</a></li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
+            <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
+          </ul>
+          <a href="#" className="mt-8 bg-gold text-white px-7 py-2 rounded-lg shadow font-semibold hover:bg-blue transition whitespace-nowrap min-w-[170px] text-center font-thin">Book a Reservation</a>
+        </div>
+        <style>{`
+          .nav-tab::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff9900 60%, #ffb84d 100%);
+            border-radius: 2px;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: opacity 0.2s, transform 0.2s;
+          }
+          .nav-tab:hover::after, .nav-tab:focus::after {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+        `}</style>
+      </nav>
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col items-center justify-center py-12 px-4">
         {/* Contact Info */}
         <div className="text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Contact Information</h2>

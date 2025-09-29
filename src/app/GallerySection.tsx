@@ -39,8 +39,8 @@ const groups: string[][] = [];
 
   return (
     <section className="w-full flex flex-col items-center py-20 bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#35521a] text-center mb-2">Gallery</h2>
-      <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl">
+  <h2 className="text-3xl md:text-4xl font-sans font-thin text-gray-900 text-center mb-2">Gallery</h2>
+  <p className="text-lg text-gray-900 text-center mb-12 max-w-2xl font-sans font-thin">
         Explore our stunning apartment renders and completed projects
       </p>
       <div className="relative w-full max-w-6xl h-[350px] flex items-center justify-center z-10 overflow-hidden">

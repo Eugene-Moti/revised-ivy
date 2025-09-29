@@ -2,8 +2,9 @@
 
 
 import Image from "next/image";
-import GallerySection from "./GallerySection";
+import Link from "next/link";
 import { useState, useEffect } from "react";
+import GallerySection from "./GallerySection";
 import GalleryCard from "./GalleryCard";
 
 const apartmentBgImages = [
@@ -66,7 +67,7 @@ export default function Home() {
   return (
     <>
       {/* Landing Section */}
-      <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#133322]">
+      <section className="relative min-h-screen flex flex-col overflow-hidden bg-navy">
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <video
@@ -79,7 +80,7 @@ export default function Home() {
           />
         </div>
         {/* Navbar */}
-  <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#133322] rounded-none shadow border-b border-[#35521a]/40">
+        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white rounded-none shadow border-b border-gold/40 font-sans font-thin">
           <div className="flex items-center gap-3">
             <Image
               src="/designs/Ivy_logo.png"
@@ -90,8 +91,8 @@ export default function Home() {
               priority
             />
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-[#f7f7e7] leading-6">The Ivy Group</span>
-              <span className="text-xs text-[#f7f7e7]/80 font-medium">Premium Real Estate</span>
+              <span className="text-2xl font-thin text-gold leading-6">The Ivy Group</span>
+              <span className="text-xs font-thin text-blue">Premium Real Estate</span>
             </div>
           </div>
           {/* Hamburger for mobile */}
@@ -103,27 +104,31 @@ export default function Home() {
           {/* Desktop Nav */}
           <div className="hidden md:flex flex-1 items-center">
             <ul className="flex flex-1 justify-center items-center gap-6 text-base font-medium">
-              <li><a href="#" className="text-[#f7f7e7] font-semibold nav-tab relative">Home</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Buy</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Let</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">About</a></li>
-              <li><a href="/contact" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Contact</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Blog</a></li>
+              <li>
+                <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">Home</Link>
+              </li>
+              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Buy</a></li>
+              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
+              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
+              <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
+              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
             </ul>
-            <a href="/book-reservation" className="ml-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
+            <a href="/book-reservation" className="ml-8 bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
           </div>
           {/* Mobile Nav Overlay */}
           <div className={`fixed inset-0 bg-black/60 z-20 transition-opacity duration-300 ${navOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
-          <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[#133322] shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6`}>
+          <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6 font-sans font-thin`}>
             <ul className="flex flex-col gap-6 text-lg font-semibold">
-              <li><a href="#" className="text-[#f7f7e7] nav-tab" onClick={()=>setNavOpen(false)}>Home</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Buy</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Let</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>About</a></li>
-              <li><a href="/contact" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Contact</a></li>
-              <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Blog</a></li>
+              <li>
+                <Link href="/" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)} aria-label="Home">Home</Link>
+              </li>
+              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Buy</a></li>
+              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
+              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
+              <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
+              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
             </ul>
-            <a href="/book-reservation" className="bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition text-center mt-4" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
+            <a href="/book-reservation" className="bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center font-thin" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
           </div>
           <style>{`
             .nav-tab::after {
@@ -147,90 +152,125 @@ export default function Home() {
           `}</style>
         </nav>
         {/* Hero Section */}
-  <main className="relative z-20 flex flex-col items-center justify-center w-full flex-1 pt-1 md:pt-2 pb-10 min-h-[calc(100vh-80px)]">
-          <div className="flex flex-col items-center w-full max-w-2xl rounded-xl px-4 py-6 mt-0 shadow-lg absolute left-1/2 -translate-x-1/2 top-2 md:top-6 animate-fade-in">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[#2d2d2d] text-center drop-shadow-2xl mb-4 font-serif whitespace-nowrap" style={{ fontFamily: 'Merriweather, Times New Roman, Times, serif' }}>
-              Welcome to The Ivy Group
-            </h1>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#" className="bg-[#35521a] text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-[#466c25] transition">Explore Properties</a>
-              <a href="#" className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg shadow hover:bg-white hover:text-[#35521a] transition">Book Viewing</a>
-            </div>
-          </div>
+  <main className="relative z-20 flex flex-col items-center justify-center w-full min-h-[calc(100vh-80px)] font-sans" style={{ fontWeight: 300 }}>
+    <div className="flex flex-col items-center justify-center w-full h-full flex-1 max-w-4xl mx-auto px-4 py-12 animate-fade-in" style={{ minHeight: '60vh' }}>
+  <h1 className="text-4xl md:text-6xl font-extrabold gold-gradient-text text-center mb-10 whitespace-nowrap hero-glow-text">Welcome to The Ivy Group</h1>
+      <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
+  <a href="#" className="font-bold text-xl bg-transparent border-2 border-gold text-black px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-gold hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Explore Properties</a>
+  <a href="#" className="font-bold text-xl bg-transparent border-2 border-gold text-black px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-gold hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Book Viewing</a>
+      </div>
+      <style jsx global>{`
+        .hero-glow-text {
+          text-shadow: 0 0 16px #e5c97b, 0 2px 8px #fff, 0 1px 0 #bfa14a;
+        }
+      `}</style>
+      <style jsx global>{`
+        .hero-outline-text {
+          -webkit-text-stroke: 2px #fff;
+          text-stroke: 2px #fff;
+          color: transparent;
+        }
+        .hero-outline-text:hover, .hero-outline-text:focus {
+          background: linear-gradient(90deg, #fff 60%, #e5c97b 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          border-color: #e5c97b;
+        }
+      `}</style>
+    </div>
         </main>
       </section>
 
       {/* Premium Locations Section */}
-  <section className="relative z-10 w-full flex flex-col items-center py-20 bg-white/95">
-  <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-[#151c27] text-center mb-2">Our Premium Locations</h2>
-  <div className="flex items-center justify-center w-full mb-8">
-    <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
-    <span className="text-[#e5d7a3] text-2xl">★</span>
-    <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
-  </div>
-  <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl">
-          Three exceptional developments across Nairobi&apos;s most prestigious neighborhoods
-        </p>
-  <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 md:gap-8 px-2 md:px-4 justify-center items-center space-y-6 md:space-y-0">
+    <section className="relative z-10 w-full flex flex-col items-center py-20 bg-cover bg-center" style={{backgroundImage: 'url(/designs/IMG-20250710-WA0028.jpg)'}}>
+      <div className="absolute inset-0 bg-black/70 z-0" />
+      <div className="relative z-10 w-full flex flex-col items-center">
+  <h2 className="text-3xl md:text-4xl font-sans font-thin text-white text-center mb-2">Our Premium Locations</h2>
+    <div className="flex items-center justify-center w-full mb-8">
+      <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
+      <span className="text-[#e5d7a3] text-2xl">★</span>
+      <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
+    </div>
+    <p className="text-lg text-gray-100 text-center mb-12 max-w-2xl font-sans font-thin">
+      Three exceptional developments across Nairobi&apos;s most prestigious neighborhoods
+    </p>
+    <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 md:gap-8 px-2 md:px-4 justify-center items-center space-y-6 md:space-y-0">
           {/* Blossoms Ivy Card */}
-          <div className="relative group bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0" style={{backgroundImage: 'url(/designs/Blossom Ivy.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/16_KCGV_Blossom Ivy_Play_Area1.png" alt="Blossoms Ivy" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-bold text-[#35521a] mb-1 relative z-10">Blossoms Ivy</h3>
-            <div className="text-gray-700 font-medium mb-2 relative z-10">Kileleshwa</div>
-            <p className="text-gray-600 mb-6 relative z-10">Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience.</p>
-            <a href="#" className="bg-[#35521a] text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-[#466c25] transition relative z-10">Explore Blossoms</a>
+            <h3 className="text-2xl font-sans font-bold gold-gradient-text drop-shadow-gold mb-1 relative z-10 text-center">Blossoms Ivy</h3>
+            <div className="gold-gradient-text drop-shadow-gold font-sans font-semibold mb-2 relative z-10 text-center">Kileleshwa</div>
+            <p className="gold-gradient-text drop-shadow-gold font-sans font-thin mb-6 relative z-10 text-center">Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience.</p>
+            <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Blossoms Ivy</a>
           </div>
           {/* Luckinn Ivy Card */}
-          <div className="relative group bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0" style={{backgroundImage: 'url(/designs/Luckinn Ivy.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/Exterior_04_IA.png" alt="Luckinn Ivy" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-bold text-[#35521a] mb-1 relative z-10">Luckinn Ivy</h3>
-            <div className="text-gray-700 font-medium mb-2 relative z-10">Westlands</div>
-            <p className="text-gray-600 mb-6 relative z-10">Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families.</p>
-            <a href="#" className="bg-[#35521a] text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-[#466c25] transition relative z-10">Explore Luckin</a>
+            <h3 className="text-2xl font-sans font-bold gold-gradient-text drop-shadow-gold mb-1 relative z-10 text-center">Luckinn Ivy</h3>
+            <div className="gold-gradient-text drop-shadow-gold font-sans font-semibold mb-2 relative z-10 text-center">Westlands</div>
+            <p className="gold-gradient-text drop-shadow-gold font-sans font-thin mb-6 relative z-10 text-center">Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families.</p>
+            <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Luckinn Ivy</a>
           </div>
           {/* Ivy Park Card */}
-          <div className="relative group bg-white rounded-2xl shadow p-6 flex flex-col items-start w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0" style={{backgroundImage: 'url(/designs/Ivy Park.png)', backgroundSize: 'cover', backgroundPosition: 'center'}} />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/Exterior_07_IA.png" alt="Ivy Park" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-bold text-[#35521a] mb-1 relative z-10">Ivy Park</h3>
-            <div className="text-gray-700 font-medium mb-2 relative z-10">Kilimani</div>
-            <p className="text-gray-600 mb-6 relative z-10">Sophisticated residences in prestigious Kilimani, combining luxury with accessibility.</p>
-            <a href="#" className="bg-[#35521a] text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-[#466c25] transition relative z-10">Explore Ivy Park</a>
+            <h3 className="text-2xl font-sans font-bold gold-gradient-text drop-shadow-gold mb-1 relative z-10 text-center">Ivy Park</h3>
+            <div className="gold-gradient-text drop-shadow-gold font-sans font-semibold mb-2 relative z-10 text-center">Kilimani</div>
+            <p className="gold-gradient-text drop-shadow-gold font-sans font-thin mb-6 relative z-10 text-center">Sophisticated residences in prestigious Kilimani, combining luxury with accessibility.</p>
+            <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Ivy Park</a>
           </div>
-        {/* Responsive card width for mobile */}
         <style jsx>{`
-          @media (max-width: 768px) {
+              <a href="#" className="w-full bg-[#f7e7b4]/90 text-black py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Blossoms Ivy</a>
             .group.bg-white {
-              width: 100% !important;
+              <a href="#" className="w-full bg-[#f7e7b4]/90 text-black py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Luckinn Ivy</a>
               max-width: 22rem;
-              min-width: 0;
+              <a href="#" className="w-full bg-[#f7e7b4]/90 text-black py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Ivy Park</a>
             }
           }
         `}</style>
+        <style jsx global>{`
+          .gold-gradient-text {
+            background: linear-gradient(90deg, #e5c97b 0%, #f7e7b4 50%, #bfa14a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+          .drop-shadow-gold {
+            text-shadow: 0 2px 8px rgba(191,161,74,0.18), 0 1px 0 #bfa14a;
+          }
+          .gold-btn-border {
+            border: 2px solid #e5c97b;
+          }
+        `}</style>
+        </div>
         </div>
       </section>
 
       {/* Apartment Collections Section */}
   <section className="w-full flex flex-col items-center py-20 bg-[#fcfbf7]">
-  <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 text-center mb-2 tracking-wide">Apartment Collections</h2>
+  <h2 className="text-3xl md:text-4xl font-sans font-thin text-gray-900 text-center mb-2">Apartment Collections</h2>
   {/* Apartment Collections: soft cream background */}
     <div className="flex items-center justify-center w-full mb-8">
       <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
       <span className="text-[#e5d7a3] text-2xl">★</span>
       <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
     </div>
-    <p className="text-lg text-gray-500 text-center mb-16 max-w-2xl mx-auto">Choose from our range of meticulously designed living spaces</p>
+  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-sans font-thin">Choose from our range of meticulously designed living spaces</p>
   <div className="w-full max-w-7xl flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-8 px-2 sm:px-0 justify-center items-center">
       {/* 1-Bedroom */}
       <div className="relative rounded-xl overflow-hidden shadow-xl w-[270px] h-[270px] flex items-center justify-center group">
@@ -270,13 +310,13 @@ export default function Home() {
       {/* Gallery Section */}
   {/* Gallery Section - Modern Card Style */}
   <section className="w-full flex flex-col items-center py-20 bg-[#f7f7fa]">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 text-center mb-2 tracking-wide">Gallery</h2>
+  <h2 className="text-3xl md:text-4xl font-sans font-thin text-gray-900 text-center mb-2">Gallery</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
           <span className="text-[#e5d7a3] text-2xl">★</span>
           <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
         </div>
-        <p className="text-lg text-gray-500 text-center mb-16 max-w-2xl mx-auto">Explore our stunning apartment renders and completed projects</p>
+  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-sans font-thin">Explore our stunning apartment renders and completed projects</p>
   <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-2 md:px-4 animate-fade-in">
           {/* Gallery Images - Use the same images as before */}
           <GalleryCard img="/designs/IMG-20250709-WA0079.jpg" />
@@ -297,13 +337,13 @@ export default function Home() {
       {/* Get In Touch Section - Modern Card Style */}
   {/* Get In Touch Section: light sage background */}
   <section className="w-full py-24 flex flex-col items-center justify-center bg-[#e9ede9]">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 text-center mb-2 tracking-wide">Get in touch</h2>
+  <h2 className="text-3xl md:text-4xl font-sans font-thin text-gray-900 text-center mb-2">Get in touch</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
           <span className="text-[#e5d7a3] text-2xl">★</span>
           <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
         </div>
-        <p className="text-lg text-gray-500 text-center mb-16 max-w-2xl mx-auto">Subscribe to our newsletters to be the first to hear the latest news about what is happening in the real estate market.</p>
+  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-sans font-thin">Subscribe to our newsletters to be the first to hear the latest news about what is happening in the real estate market.</p>
   <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-2 md:px-4 mb-12 animate-fade-in">
           {/* Email Card */}
           <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
@@ -311,7 +351,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" /></svg>
             </span>
             <div>
-              <div className="text-xl font-serif font-normal text-gray-900 mb-2 tracking-wide">The Ivy Group</div>
+              <div className="text-xl font-sans font-thin text-gray-900 mb-2 tracking-wide">The Ivy Group</div>
               <div className="text-gray-600 mb-1">Email Via:</div>
               <div className="text-base text-gray-700 mb-6">blossomivymarketing@gmail.com</div>
             </div>
@@ -332,7 +372,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25m-19.5 0v.243a2.25 2.25 0 00.659 1.591l7.591 7.591a2.25 2.25 0 003.182 0l7.591-7.591A2.25 2.25 0 0021.75 6.993V6.75" /></svg>
             </span>
             <div>
-              <div className="text-xl font-serif font-normal text-gray-900 mb-2 tracking-wide">CALL US</div>
+              <div className="text-xl font-sans font-thin text-gray-900 mb-2 tracking-wide">CALL US</div>
               <div className="text-gray-600 mb-1">Call us via:</div>
               <div className="text-base text-gray-700 mb-6">+254798888866<br/>+254799008564</div>
             </div>
@@ -347,7 +387,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" /></svg>
             </span>
             <div>
-              <div className="text-xl font-serif font-normal text-gray-900 mb-2 tracking-wide">VISIT OUR OFFICES</div>
+              <div className="text-xl font-sans font-thin text-gray-900 mb-2 tracking-wide">VISIT OUR OFFICES</div>
               <div className="text-gray-600 mb-1">Gatundu Road, Kileleshwa.</div>
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">

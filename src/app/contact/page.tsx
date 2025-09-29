@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from 'react';
 import Image from "next/image";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
@@ -8,7 +9,7 @@ export default function ContactPage() {
   return (
     <div className="bg-gradient-to-b from-[#f7f7e7] via-[#e9ede9] to-[#f7f7e7] min-h-screen flex flex-col">
       {/* Navbar */}
-      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#000000] rounded-none shadow border-b border-[#35521a]/40">
+  <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white rounded-none shadow border-b border-gold/40 font-sans font-thin">
         <div className="flex items-center gap-3">
           <Image
             src="/designs/Ivy_logo.png"
@@ -19,8 +20,8 @@ export default function ContactPage() {
             priority
           />
           <div className="flex flex-col">
-            <span className="text-2xl font-bold text-[#f7f7e7] leading-6">The Ivy Group</span>
-            <span className="text-xs text-[#f7f7e7]/80 font-medium">Premium Real Estate</span>
+            <span className="text-2xl font-thin text-gold leading-6">The Ivy Group</span>
+            <span className="text-xs font-thin text-blue">Premium Real Estate</span>
           </div>
         </div>
         {/* Hamburger for mobile */}
@@ -32,48 +33,72 @@ export default function ContactPage() {
         {/* Desktop Nav */}
         <div className="hidden md:flex flex-1 items-center">
           <ul className="flex flex-1 justify-center items-center gap-6 text-base font-medium">
-            <li><a href="/" className="text-[#f7f7e7] font-semibold nav-tab relative">Home</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Buy</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Let</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">About</a></li>
-            <li><a href="/contact" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Contact</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 hover:text-[#f7f7e7] nav-tab relative">Blog</a></li>
+            <li>
+              <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">Home</Link>
+            </li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Buy</a></li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
+            <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
+            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
           </ul>
           <a href="#" className="ml-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
         </div>
         {/* Mobile Nav Overlay */}
         <div className={`fixed inset-0 bg-black/60 z-20 transition-opacity duration-300 ${navOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
-        <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[#133322] shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6`}> 
+  <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6 font-sans font-thin`}>
           <ul className="flex flex-col gap-6 text-lg font-semibold">
-            <li><a href="/" className="text-[#f7f7e7] nav-tab" onClick={()=>setNavOpen(false)}>Home</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Buy</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Let</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>About</a></li>
-            <li><a href="/contact" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Contact</a></li>
-            <li><a href="#" className="text-[#f7f7e7]/80 nav-tab" onClick={()=>setNavOpen(false)}>Blog</a></li>
+            <li>
+              <Link href="/" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)} aria-label="Home">Home</Link>
+            </li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Buy</a></li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
+            <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
+            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
           </ul>
-          <a href="#" className="mt-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
+          <a href="#" className="mt-8 bg-gold text-white px-7 py-2 rounded-lg shadow font-semibold hover:bg-blue transition whitespace-nowrap min-w-[170px] text-center font-thin">Book a Reservation</a>
         </div>
+        <style>{`
+          .nav-tab::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff9900 60%, #ffb84d 100%);
+            border-radius: 2px;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: opacity 0.2s, transform 0.2s;
+          }
+          .nav-tab:hover::after, .nav-tab:focus::after {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+        `}</style>
       </nav>
 
       {/* Top Section - For Inquiries */}
-      <div className="relative w-full min-h-[350px] flex flex-col items-center justify-center" style={{backgroundImage: 'url(/designs/contact-us-scaled-1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+  <div className="relative w-full min-h-[350px] flex flex-col items-center justify-center bg-white font-sans font-thin bg-[url('/designs/contact-us-scaled-1.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-[#133322]/80" />
         <div className="relative z-10 flex flex-col items-center justify-center w-full py-16">
-          <h1 className="text-5xl md:text-6xl font-serif font-semibold text-[#e5d7a3] mb-4 tracking-widest text-center">FOR INQUIRIES</h1>
+          <h1 className="text-5xl md:text-6xl font-thin text-gold mb-4 tracking-widest text-center drop-shadow-lg">FOR INQUIRIES</h1>
           <div className="flex items-center justify-center w-full mb-4">
-            <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
-            <span className="text-[#e5d7a3] text-2xl">★</span>
-            <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
+            <div className="h-0.5 w-32 bg-gold mr-2" />
+            <span className="text-gold text-2xl">★</span>
+            <div className="h-0.5 w-32 bg-gold ml-2" />
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-white text-lg font-mono tracking-widest mb-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-navy text-lg font-thin tracking-widest mb-6 drop-shadow-lg">
             <span>+254 798 888 866</span>
             <span className="hidden md:inline">|</span>
             <span>+254 799 008 564</span>
             <span className="hidden md:inline">|</span>
             <span>info@theivygroup.co.ke</span>
           </div>
-          <a href="https://wa.me/254798888866" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-[#1ebe57] transition-all text-lg flex items-center gap-2">
+          <a href="https://wa.me/254798888866" target="_blank" rel="noopener noreferrer" className="bg-blue text-white font-thin px-8 py-3 rounded-full shadow-lg hover:bg-gold transition-all text-lg flex items-center gap-2 drop-shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"><path fill="#25D366" d="M12 2C6.477 2 2 6.477 2 12c0 1.85.504 3.62 1.46 5.17L2 22l4.93-1.43A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm0 18c-1.61 0-3.18-.39-4.57-1.13l-.33-.18-2.93.85.84-2.86-.21-.34A7.96 7.96 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8Zm4.29-5.71c-.23-.11-1.36-.67-1.57-.75-.21-.08-.36-.11-.51.11-.15.22-.59.75-.72.9-.13.15-.27.17-.5.06-.23-.11-.97-.36-1.85-1.13-.68-.6-1.13-1.34-1.26-1.56-.13-.22-.01-.35.1-.46.1-.1.23-.27.34-.41.11-.14.15-.24.23-.4.08-.16.04-.3-.02-.42-.06-.12-.51-1.23-.7-1.68-.19-.45-.38-.39-.53-.4-.14-.01-.3-.01-.46-.01-.16 0-.42.06-.64.29-.22.23-.84.84-.82 2.04.02 1.2.87 2.36 1 2.52.13.16 1.72 2.6 4.18 3.54.59.25 1.04.4 1.39.51.58.19 1.12.16 1.54.1.47-.07 1.41-.57 1.62-1.13.2-.56.2-1.03.14-1.13-.06-.1-.21-.16-.45-.28Z"/></svg>
             CHAT ON WHATSAPP
           </a>
@@ -83,8 +108,8 @@ export default function ContactPage() {
       {/* Main Content */}
       <div className="max-w-6xl w-full mx-auto grid md:grid-cols-2 gap-8 py-12 px-4">
         {/* Message Form */}
-        <div className="bg-white/90 rounded-xl shadow-lg p-8 border border-[#e5d7a3]">
-          <h2 className="text-xl font-bold mb-6 text-gray-900">Send us a message</h2>
+        <div className="bg-white/90 rounded-xl shadow-lg p-8 border border-gold">
+          <h2 className="text-xl font-thin mb-6 text-gold drop-shadow-lg">Send us a message</h2>
           <form className="space-y-4">
             <div className="flex gap-4">
               <input type="text" placeholder="First Name" className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] placeholder:text-gray-500 bg-white" />
@@ -92,7 +117,7 @@ export default function ContactPage() {
             </div>
             <input type="email" placeholder="Email" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] placeholder:text-gray-500 bg-white" />
             <input type="text" placeholder="Phone" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] placeholder:text-gray-500 bg-white" />
-            <select className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] text-gray-700 bg-white">
+            <select className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#39591c] text-gray-700 bg-white" title="Inquiry Type">
               <option>General Inquiry</option>
               <option>Sales</option>
               <option>Support</option>
@@ -144,10 +169,10 @@ export default function ContactPage() {
           <div className="bg-white/90 rounded-xl shadow-lg p-6 flex flex-col gap-4 border border-[#e5d7a3]">
             <h2 className="text-xl font-bold mb-2 text-gray-900">Follow Us</h2>
             <div className="flex gap-4 text-xl">
-              <a href="#" className="text-[#39591c] hover:text-[#2e4717]"><FaTwitter /></a>
-              <a href="#" className="text-[#39591c] hover:text-[#2e4717]"><FaFacebookF /></a>
-              <a href="#" className="text-[#39591c] hover:text-[#2e4717]"><FaInstagram /></a>
-              <a href="#" className="text-[#39591c] hover:text-[#2e4717]"><FaLinkedinIn /></a>
+              <a href="#" className="text-[#39591c] hover:text-[#2e4717]" title="Twitter"><FaTwitter /></a>
+              <a href="#" className="text-[#39591c] hover:text-[#2e4717]" title="Facebook"><FaFacebookF /></a>
+              <a href="#" className="text-[#39591c] hover:text-[#2e4717]" title="Instagram"><FaInstagram /></a>
+              <a href="#" className="text-[#39591c] hover:text-[#2e4717]" title="LinkedIn"><FaLinkedinIn /></a>
             </div>
           </div>
           <div className="bg-[#39591c] rounded-xl shadow-lg p-6 text-white flex flex-col gap-4">
@@ -167,7 +192,7 @@ export default function ContactPage() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8271820880486!2d36.78276647496567!3d-1.27713609871072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f170056423b43%3A0xac4d412392285ae0!2sBLOSSOM%20IVY%20RESIDENCE!5e0!3m2!1sen!2ske!4v1758788884873!5m2!1sen!2ske"
             width="100%"
             height="350"
-            style={{ border: 0, borderRadius: '1rem', minHeight: '300px', maxWidth: '900px' }}
+            className="border-0 rounded-2xl min-h-[300px] max-w-[900px] w-full"
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
