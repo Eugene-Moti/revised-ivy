@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
 /* Luxury logo text styling */
 .luxury-logo-text {
   font-family: 'Playfair Display', serif;
@@ -18,9 +21,6 @@
   font-family: 'Montserrat', sans-serif;
   color: #bfa544;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-@import "tailwindcss";
 
 /* Extra large hero heading for home page */
 .hero-heading-xl {
