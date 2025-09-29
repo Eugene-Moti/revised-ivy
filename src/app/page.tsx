@@ -80,19 +80,20 @@ export default function Home() {
           />
         </div>
         {/* Navbar */}
-        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white rounded-none shadow border-b border-gold/40 font-sans font-thin">
+        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white/95 rounded-none shadow border-b border-gold/40 font-sans font-thin">
           <div className="flex items-center gap-3">
             <Image
               src="/designs/Ivy_logo.png"
               alt="Ivy Logo"
               width={48}
               height={48}
-              className="rounded"
+              className="rounded shadow-sm"
               priority
+              style={{ minWidth: 48 }}
             />
-            <div className="flex flex-col">
-              <span className="text-2xl font-thin text-gold leading-6">The Ivy Group</span>
-              <span className="text-xs font-thin text-blue">Premium Real Estate</span>
+            <div className="flex flex-col leading-tight">
+              <span style={{fontFamily:'Playfair Display, serif', fontWeight:700, letterSpacing:'0.01em', fontSize:'2rem', background:'linear-gradient(90deg,#bfa544 40%,#ffcc80 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', display:'inline-block'}}>The Ivy Group</span>
+              <span className="text-xs font-light tracking-wide mt-0.5" style={{fontFamily:'Montserrat, sans-serif', color:'#bfa544'}}>Premium Real Estate</span>
             </div>
           </div>
           {/* Hamburger for mobile */}
@@ -111,7 +112,7 @@ export default function Home() {
               <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
               <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
               <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
-              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
+              <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
             </ul>
             <a href="/book-reservation" className="ml-8 bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
           </div>
@@ -126,7 +127,7 @@ export default function Home() {
               <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
               <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
               <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
-              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
+              <li><a href="/blog" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
             </ul>
             <a href="/book-reservation" className="bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center font-thin" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
           </div>
@@ -154,10 +155,10 @@ export default function Home() {
         {/* Hero Section */}
   <main className="relative z-20 flex flex-col items-center justify-center w-full min-h-[calc(100vh-80px)] font-sans" style={{ fontWeight: 300 }}>
     <div className="flex flex-col items-center justify-center w-full h-full flex-1 max-w-4xl mx-auto px-4 py-12 animate-fade-in" style={{ minHeight: '60vh' }}>
-  <h1 className="text-4xl md:text-6xl font-extrabold gold-gradient-text text-center mb-10 whitespace-nowrap hero-glow-text">Welcome to The Ivy Group</h1>
+  <h1 className="text-5xl md:text-7xl font-extrabold text-center mb-10 whitespace-nowrap ivy-logo-text hero-heading-xl">Welcome to The Ivy Group</h1>
       <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
-  <a href="#" className="font-bold text-xl bg-transparent border-2 border-gold text-black px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-gold hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Explore Properties</a>
-  <a href="#" className="font-bold text-xl bg-transparent border-2 border-gold text-black px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-gold hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Book Viewing</a>
+  <a href="#" className="font-bold text-xl bg-gold border-2 border-gold text-white px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-blue-900 hover:text-white hover:border-blue-900 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Explore Properties</a>
+  <a href="#" className="font-bold text-xl bg-gold border-2 border-gold text-white px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-blue-900 hover:text-white hover:border-blue-900 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Book Viewing</a>
       </div>
       <style jsx global>{`
         .hero-glow-text {
@@ -187,7 +188,7 @@ export default function Home() {
     <section className="relative z-10 w-full flex flex-col items-center py-20 bg-cover bg-center" style={{backgroundImage: 'url(/designs/IMG-20250710-WA0028.jpg)'}}>
       <div className="absolute inset-0 bg-black/70 z-0" />
       <div className="relative z-10 w-full flex flex-col items-center">
-  <h2 className="text-3xl md:text-4xl font-sans font-thin text-white text-center mb-2">Our Premium Locations</h2>
+  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Our Premium Locations</h2>
     <div className="flex items-center justify-center w-full mb-8">
       <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
       <span className="text-[#e5d7a3] text-2xl">★</span>
@@ -263,7 +264,7 @@ export default function Home() {
 
       {/* Apartment Collections Section */}
   <section className="w-full flex flex-col items-center py-20 bg-[#fcfbf7]">
-  <h2 className="text-3xl md:text-4xl font-sans font-thin text-gray-900 text-center mb-2">Apartment Collections</h2>
+  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Apartment Collections</h2>
   {/* Apartment Collections: soft cream background */}
     <div className="flex items-center justify-center w-full mb-8">
       <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
@@ -310,7 +311,7 @@ export default function Home() {
       {/* Gallery Section */}
   {/* Gallery Section - Modern Card Style */}
   <section className="w-full flex flex-col items-center py-20 bg-[#f7f7fa]">
-  <h2 className="text-3xl md:text-4xl font-sans font-thin text-gray-900 text-center mb-2">Gallery</h2>
+  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Gallery</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
           <span className="text-[#e5d7a3] text-2xl">★</span>
@@ -337,7 +338,7 @@ export default function Home() {
       {/* Get In Touch Section - Modern Card Style */}
   {/* Get In Touch Section: light sage background */}
   <section className="w-full py-24 flex flex-col items-center justify-center bg-[#e9ede9]">
-  <h2 className="text-3xl md:text-4xl font-sans font-thin text-gray-900 text-center mb-2">Get in touch</h2>
+  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Get in touch</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
           <span className="text-[#e5d7a3] text-2xl">★</span>

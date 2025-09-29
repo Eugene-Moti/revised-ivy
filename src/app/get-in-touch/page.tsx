@@ -8,19 +8,18 @@ export default function GetInTouch() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7f7e7] via-[#e9ede9] to-[#f7f7e7] flex flex-col">
       {/* Navbar */}
-      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white rounded-none shadow border-b border-gold/40 font-sans font-thin">
+      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white/95 rounded-none shadow border-b border-gold/40 font-sans font-thin">
         <div className="flex items-center gap-3">
           <Image
             src="/designs/Ivy_logo.png"
             alt="Ivy Logo"
             width={48}
             height={48}
-            className="rounded"
-            priority
-          />
-          <div className="flex flex-col">
-            <span className="text-2xl font-thin text-gold leading-6">The Ivy Group</span>
-            <span className="text-xs font-thin text-blue">Premium Real Estate</span>
+            className="rounded shadow-sm min-w-48"
+            priority />
+          <div className="flex flex-col leading-tight">
+            <span className="ivy-logo-text">The Ivy Group</span>
+            <span className="ivy-logo-subtitle">Premium Real Estate</span>
           </div>
         </div>
         {/* Hamburger for mobile */}
@@ -39,7 +38,7 @@ export default function GetInTouch() {
             <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
             <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
             <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
+            <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
           </ul>
           <a href="#" className="ml-8 bg-[#35521a] text-[#f7f7e7] px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#466c25] transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
         </div>
@@ -54,7 +53,7 @@ export default function GetInTouch() {
             <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
             <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
             <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
-            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
+            <li><a href="/blog" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
           </ul>
           <a href="#" className="mt-8 bg-gold text-white px-7 py-2 rounded-lg shadow font-semibold hover:bg-blue transition whitespace-nowrap min-w-[170px] text-center font-thin">Book a Reservation</a>
         </div>
