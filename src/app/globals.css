@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
 /* Gold text for hero heading */
 .hero-heading-gold {
   color: #bfa544;
@@ -8,8 +11,6 @@
   color: #fff;
   text-shadow: 0 2px 16px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.25);
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-@import "tailwindcss";
 
 /* Luxury logo text styling */
 .luxury-logo-text {
