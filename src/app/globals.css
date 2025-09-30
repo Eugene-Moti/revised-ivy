@@ -1,5 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
+.hero-btn {
+  color: #bfa544;
+  border: 3px solid #bfa544;
+  box-shadow: 0 4px 24px 0 rgba(191, 165, 68, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.18);
+  font-weight: 700;
+  background: #fffbe7;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+.hero-btn:hover, .hero-btn:focus {
+  background: rgba(191, 165, 68, 0.65);
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(191, 165, 68, 0.32), 0 2px 12px 0 rgba(0,0,0,0.22);
+}
+.border-gold {
+  border-color: #bfa544 !important;
+}
+.marquee-premium-container {
+  padding-top: 1rem;
+}
+/* Marquee animation for premium text */
+@keyframes marquee-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-5%);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(105%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(110%);
+  }
+}
+.marquee-premium {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg,#bfa544 40%,#ffcc80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: marquee-fade 10s linear infinite;
+  text-align: left;
+  padding: 0.5rem 0;
+}
+/* Google Maps iframe styling */
+.ivy-map-iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 1rem;
+  min-height: 300px;
+  max-width: 900px;
+}
+/* Property card hover backgrounds */
+.bg-blossoms-ivy {
+  background-image: url('/designs/Blossom Ivy.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-luckinn-ivy {
+  background-image: url('/designs/Luckinn Ivy.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-ivy-park {
+  background-image: url('/designs/Ivy Park.png');
+  background-size: cover;
+  background-position: center;
+}
+/* Premium Locations section background */
+.bg-premium-locations {
+  background-image: url('/designs/IMG-20250710-WA0028.jpg');
+}
 
 /* Gold text for hero heading */
 .hero-heading-gold {

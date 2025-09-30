@@ -61,6 +61,9 @@ function ContactFormModal({ open, onClose }: { open: boolean; onClose: () => voi
 }
 
 export default function Home() {
+  // ...existing code...
+  // Marquee text for premium branding
+  const marqueeText = "Welcome To The Ivy Group";
   const videoUrl = "/designs/video_bg.mp4";
   const [navOpen, setNavOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -79,7 +82,7 @@ export default function Home() {
             playsInline
           />
         </div>
-        {/* Navbar */}
+        {/* Navbar (copied from blog page for consistency) */}
         <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white/95 rounded-none shadow border-b border-gold/40 font-sans font-thin">
           <div className="flex items-center gap-3">
             <Image
@@ -87,13 +90,12 @@ export default function Home() {
               alt="Ivy Logo"
               width={48}
               height={48}
-              className="rounded shadow-sm"
+              className="rounded shadow-sm min-w-48"
               priority
-              style={{ minWidth: 48 }}
             />
             <div className="flex flex-col leading-tight">
-              <span style={{fontFamily:'Playfair Display, serif', fontWeight:700, letterSpacing:'0.01em', fontSize:'2rem', background:'linear-gradient(90deg,#bfa544 40%,#ffcc80 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', display:'inline-block'}}>The Ivy Group</span>
-              <span className="text-xs font-light tracking-wide mt-0.5" style={{fontFamily:'Montserrat, sans-serif', color:'#bfa544'}}>Premium Real Estate</span>
+              <span className="ivy-logo-text">The Ivy Group</span>
+              <span className="ivy-logo-subtitle">Premium Real Estate</span>
             </div>
           </div>
           {/* Hamburger for mobile */}
@@ -153,14 +155,16 @@ export default function Home() {
           `}</style>
         </nav>
         {/* Hero Section */}
-  <main className="relative z-20 flex flex-col items-center justify-center w-full min-h-[calc(100vh-80px)] font-sans" style={{ fontWeight: 300 }}>
-    <div className="flex flex-col items-center justify-center w-full h-full flex-1 max-w-4xl mx-auto px-4 py-12 animate-fade-in" style={{ minHeight: '60vh' }}>
-  <h1 className="text-5xl md:text-7xl font-extrabold text-center mb-10 whitespace-nowrap hero-heading-xl hero-heading-white-shadow">
-    Welcome to The <span className="hero-heading-gold">Ivy</span> Group
-  </h1>
+  <main className="relative z-20 flex flex-col items-center justify-center w-full min-h-[calc(100vh-80px)] font-sans font-thin">
+    <div className="flex flex-col items-center justify-center w-full h-full flex-1 max-w-4xl mx-auto px-4 py-12 animate-fade-in min-h-[60vh]">
+      {/* Premium Marquee Animation - below navbar, above CTA buttons */}
+      <div className="w-full flex justify-center marquee-premium-container mb-8">
+        <span className="marquee-premium">{marqueeText}</span>
+      </div>
+      {/* Hero heading removed as requested */}
       <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
-  <a href="#" className="font-semibold text-xl bg-gold text-white px-7 py-2 rounded-lg shadow hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center border-2 border-gold">Explore Properties</a>
-  <a href="#" className="font-semibold text-xl bg-gold text-white px-7 py-2 rounded-lg shadow hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center border-2 border-gold">Book Viewing</a>
+  <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Explore Properties</a>
+  <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Book Viewing</a>
       </div>
       <style jsx global>{`
         .hero-glow-text {
@@ -187,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Premium Locations Section */}
-    <section className="relative z-10 w-full flex flex-col items-center py-20 bg-cover bg-center" style={{backgroundImage: 'url(/designs/IMG-20250710-WA0028.jpg)'}}>
+  <section className="relative z-10 w-full flex flex-col items-center py-20 bg-cover bg-center bg-premium-locations">
       <div className="absolute inset-0 bg-black/70 z-0" />
       <div className="relative z-10 w-full flex flex-col items-center">
   <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Our Premium Locations</h2>
@@ -203,7 +207,7 @@ export default function Home() {
           {/* Blossoms Ivy Card */}
           <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0" style={{backgroundImage: 'url(/designs/Blossom Ivy.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-blossoms-ivy" />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/16_KCGV_Blossom Ivy_Play_Area1.png" alt="Blossoms Ivy" className="object-cover w-full h-full" />
             </div>
@@ -215,7 +219,7 @@ export default function Home() {
           {/* Luckinn Ivy Card */}
           <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0" style={{backgroundImage: 'url(/designs/Luckinn Ivy.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-luckinn-ivy" />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/Exterior_04_IA.png" alt="Luckinn Ivy" className="object-cover w-full h-full" />
             </div>
@@ -227,7 +231,7 @@ export default function Home() {
           {/* Ivy Park Card */}
           <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0" style={{backgroundImage: 'url(/designs/Ivy Park.png)', backgroundSize: 'cover', backgroundPosition: 'center'}} />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-ivy-park" />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/Exterior_07_IA.png" alt="Ivy Park" className="object-cover w-full h-full" />
             </div>
@@ -402,9 +406,7 @@ export default function Home() {
         <div className="w-full flex justify-center mt-12">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8271820880486!2d36.78276647496567!3d-1.27713609871072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f170056423b43%3A0xac4d412392285ae0!2sBLOSSOM%20IVY%20RESIDENCE!5e0!3m2!1sen!2ske!4v1758788884873!5m2!1sen!2ske"
-            width="100%"
-            height="350"
-            style={{ border: 0, borderRadius: '1rem', minHeight: '300px', maxWidth: '900px' }}
+            className="ivy-map-iframe"
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
