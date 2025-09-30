@@ -155,7 +155,7 @@ export default function Home() {
         {/* Hero Section */}
   <main className="relative z-20 flex flex-col items-center justify-center w-full min-h-[calc(100vh-80px)] font-sans" style={{ fontWeight: 300 }}>
     <div className="flex flex-col items-center justify-center w-full h-full flex-1 max-w-4xl mx-auto px-4 py-12 animate-fade-in" style={{ minHeight: '60vh' }}>
-  <h1 className="text-5xl md:text-7xl font-extrabold text-center mb-10 whitespace-nowrap ivy-logo-text hero-heading-xl">Welcome to The Ivy Group</h1>
+  <h1 className="text-5xl md:text-7xl font-extrabold text-center mb-10 whitespace-nowrap hero-heading-xl hero-heading-white-shadow">Welcome to The Ivy Group</h1>
       <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
   <a href="#" className="font-bold text-xl bg-gold border-2 border-gold text-white px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-blue-900 hover:text-white hover:border-blue-900 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Explore Properties</a>
   <a href="#" className="font-bold text-xl bg-gold border-2 border-gold text-white px-10 py-4 rounded-2xl shadow-lg gold-btn-border transition-all duration-200 hover:bg-blue-900 hover:text-white hover:border-blue-900 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold">Book Viewing</a>
