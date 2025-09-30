@@ -159,8 +159,8 @@ export default function Home() {
     Welcome to The <span className="hero-heading-gold">Ivy</span> Group
   </h1>
       <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
-  <a href="#" className="font-semibold text-xl bg-gold text-white px-7 py-2 rounded-lg shadow hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center border-2 border-white">Explore Properties</a>
-  <a href="#" className="font-semibold text-xl bg-gold text-white px-7 py-2 rounded-lg shadow hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center border-2 border-white">Book Viewing</a>
+  <a href="#" className="font-semibold text-xl bg-gold text-white px-7 py-2 rounded-lg shadow hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center border-2 border-gold">Explore Properties</a>
+  <a href="#" className="font-semibold text-xl bg-gold text-white px-7 py-2 rounded-lg shadow hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center border-2 border-gold">Book Viewing</a>
       </div>
       <style jsx global>{`
         .hero-glow-text {
