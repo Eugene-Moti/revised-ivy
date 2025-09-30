@@ -33,9 +33,9 @@
   color: #bfa544;
 }
 
-/* Extra large hero heading for home page */
+/* Large (reduced) hero heading for home page */
 .hero-heading-xl {
-  font-size: 7rem;
+  font-size: 4rem;
 }
 
 /* Luxury logo/brand classes */
