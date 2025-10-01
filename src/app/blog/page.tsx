@@ -159,7 +159,7 @@ export default function BlogPage() {
             alt="Ivy Logo"
             width={48}
             height={48}
-            className="rounded shadow-sm min-w-48"
+            className=""
             priority
           />
           <div className="flex flex-col leading-tight">

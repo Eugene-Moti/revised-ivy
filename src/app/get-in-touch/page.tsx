@@ -15,7 +15,7 @@ export default function GetInTouch() {
             alt="Ivy Logo"
             width={48}
             height={48}
-            className="rounded shadow-sm min-w-48"
+            className=""
             priority />
           <div className="flex flex-col leading-tight">
             <span className="ivy-logo-text">The Ivy Group</span>

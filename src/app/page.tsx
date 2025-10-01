@@ -63,7 +63,6 @@ function ContactFormModal({ open, onClose }: { open: boolean; onClose: () => voi
 export default function Home() {
   // ...existing code...
   // Marquee text for premium branding
-  const marqueeText = "Welcome To The Ivy Group";
   const videoUrl = "/designs/video_bg.mp4";
   const [navOpen, setNavOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -90,7 +89,7 @@ export default function Home() {
               alt="Ivy Logo"
               width={48}
               height={48}
-              className="rounded shadow-sm min-w-48"
+              className=""
               priority
             />
             <div className="flex flex-col leading-tight">
@@ -108,13 +107,13 @@ export default function Home() {
           <div className="hidden md:flex flex-1 items-center">
             <ul className="flex flex-1 justify-center items-center gap-6 text-base font-medium">
               <li>
-                <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">Home</Link>
+                <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">HOME</Link>
               </li>
-              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Buy</a></li>
-              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
-              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
-              <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
-              <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
+              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">BUY</a></li>
+              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">LET</a></li>
+              <li><Link href="/about" className="text-black/80 hover:text-black nav-tab relative">ABOUT</Link></li>
+              <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">CONTACT</a></li>
+              <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">BLOG</a></li>
             </ul>
             <a href="/book-reservation" className="ml-8 bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
           </div>
@@ -127,7 +126,7 @@ export default function Home() {
               </li>
               <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Buy</a></li>
               <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
-              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
+            <li><Link href="/about" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</Link></li>
               <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
               <li><a href="/blog" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
             </ul>
@@ -155,38 +154,29 @@ export default function Home() {
           `}</style>
         </nav>
         {/* Hero Section */}
-  <main className="relative z-20 flex flex-col items-center justify-center w-full min-h-[calc(100vh-80px)] font-sans font-thin">
-    <div className="flex flex-col items-center justify-center w-full h-full flex-1 max-w-4xl mx-auto px-4 py-12 animate-fade-in min-h-[60vh]">
-      {/* Premium Marquee Animation - below navbar, above CTA buttons */}
-      <div className="w-full flex justify-center marquee-premium-container mb-8">
-        <span className="marquee-premium">{marqueeText}</span>
-      </div>
-      {/* Hero heading removed as requested */}
-      <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
-  <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Explore Properties</a>
-  <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Book Viewing</a>
-      </div>
-      <style jsx global>{`
-        .hero-glow-text {
-          text-shadow: 0 0 16px #e5c97b, 0 2px 8px #fff, 0 1px 0 #bfa14a;
-        }
-      `}</style>
-      <style jsx global>{`
-        .hero-outline-text {
-          -webkit-text-stroke: 2px #fff;
-          text-stroke: 2px #fff;
-          color: transparent;
-        }
-        .hero-outline-text:hover, .hero-outline-text:focus {
-          background: linear-gradient(90deg, #fff 60%, #e5c97b 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-          border-color: #e5c97b;
-        }
-      `}</style>
-    </div>
+        <main className="relative z-20 flex flex-col items-center justify-end w-full min-h-[calc(100vh-80px)] font-sans font-thin pb-20">
+          <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto px-4 animate-fade-in">
+            {/* Hero heading removed as requested */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
+              <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Explore Properties</a>
+              <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Book Viewing</a>
+            </div>
+          </div>
+          <style jsx global>{`
+            .hero-btn {
+              background-color: transparent;
+              border: 1px solid rgba(255, 255, 255, 0.8);
+              color: white;
+              backdrop-filter: blur(2px);
+              -webkit-backdrop-filter: blur(2px);
+              transition: all 0.3s ease;
+            }
+            .hero-btn:hover {
+              background: #fffbe7;
+              border-color: #bfa544;
+              color: #bfa544;
+            }
+          `}</style>
         </main>
       </section>
 
@@ -205,7 +195,7 @@ export default function Home() {
     </p>
     <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 md:gap-8 px-2 md:px-4 justify-center items-center space-y-6 md:space-y-0">
           {/* Blossoms Ivy Card */}
-          <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-blossoms-ivy" />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
@@ -217,7 +207,7 @@ export default function Home() {
             <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Blossoms Ivy</a>
           </div>
           {/* Luckinn Ivy Card */}
-          <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-luckinn-ivy" />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
@@ -229,7 +219,7 @@ export default function Home() {
             <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Luckinn Ivy</a>
           </div>
           {/* Ivy Park Card */}
-          <div className="relative group bg-white rounded-2xl shadow-lg shadow-blue-100 p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-blue-200 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-ivy-park" />
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
@@ -420,7 +410,7 @@ export default function Home() {
           {/* Brand & Description */}
           <div className="flex-1 min-w-[220px] flex flex-col gap-3">
             <div className="flex items-center gap-2 mb-2">
-              <span className="bg-[#151c27] p-2 rounded-lg">
+              <span className="p-2 rounded-lg">
                 <Image src="/designs/Ivy_logo.png" alt="Ivy Group Logo" width={28} height={28} className="rounded" />
               </span>
               <span className="text-xl font-bold">The Ivy Group</span>

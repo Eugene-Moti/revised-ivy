@@ -12,7 +12,7 @@ export default function BookReservation() {
       {/* Navbar with improved logo/name styling */}
       <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white/95 rounded-none shadow border-b border-gold/40 font-sans font-thin">
         <div className="flex items-center gap-3">
-          <Image src="/designs/Ivy_logo.png" alt="Ivy Logo" width={48} height={48} className="rounded shadow-sm min-w-48" priority />
+          <Image src="/designs/Ivy_logo.png" alt="Ivy Logo" width={48} height={48} className="" priority />
           <div className="flex flex-col leading-tight">
             <span className="ivy-logo-text">The Ivy Group</span>
             <span className="ivy-logo-subtitle">Premium Real Estate</span>
