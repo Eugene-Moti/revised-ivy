@@ -421,7 +421,7 @@ export default function Home() {
               </span>
               <span className="text-xl font-bold">The Ivy Group</span>
             </div>
-            <div className="text-gray-300 text-base leading-snug">Premium real estate solutions across Nairobi&apos;s most prestigious neighborhoods.</div>
+            <div className="text-gray-300 text-base leading-snug">The Ivy Group Kenya is a premier real estate and property development company based in Nairobi. We specialize in creating modern, elegant, and investment-worthy developments that redefine upscale living in the city.</div>
           </div>
           {/* Quick Links */}
           <div className="flex-1 min-w-[160px]">
