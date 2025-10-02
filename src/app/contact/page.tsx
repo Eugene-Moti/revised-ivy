@@ -9,7 +9,7 @@ export default function ContactPage() {
   return (
     <div className="bg-gradient-to-b from-[#fcfbf7] via-[#f7f6f2] to-[#fcfbf7] min-h-screen flex flex-col">
       {/* Navbar */}
-  <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white/95 rounded-none shadow border-b border-gold/40 font-sans font-thin">
+  <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#fcfbf7]/95 backdrop-blur-sm rounded-none shadow border-b border-gold/40 font-sans font-thin">
   <div className="flex items-center gap-3">
           <Image
             src="/designs/Ivy_logo.png"

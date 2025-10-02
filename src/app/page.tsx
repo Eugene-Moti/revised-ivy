@@ -2,8 +2,8 @@
 
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import Link from "next/link"; 
+import { useState } from "react";
 import GallerySection from "./GallerySection";
 import GalleryCard from "./GalleryCard";
 
@@ -82,7 +82,7 @@ export default function Home() {
           />
         </div>
         {/* Navbar (copied from blog page for consistency) */}
-        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white/95 rounded-none shadow border-b border-gold/40 font-sans font-thin">
+        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#fcfbf7]/95 backdrop-blur-sm rounded-none shadow border-b border-gold/40 font-sans font-thin">
           <div className="flex items-center gap-3">
             <Image
               src="/designs/Ivy_logo.png"
@@ -195,50 +195,56 @@ export default function Home() {
     </p>
     <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 md:gap-8 px-2 md:px-4 justify-center items-center space-y-6 md:space-y-0">
           {/* Blossoms Ivy Card */}
-          <div className="relative group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-[#dcd6cc] rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-blossoms-ivy" />
-            <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
-              <img src="/designs/16_KCGV_Blossom Ivy_Play_Area1.png" alt="Blossoms Ivy" className="object-cover w-full h-full" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
+              <div className="absolute inset-0 bg-blossoms-ivy" />
+              <div className="absolute inset-0 bg-black/50" />
             </div>
-            <h3 className="text-2xl font-sans font-bold gold-gradient-text drop-shadow-gold mb-1 relative z-10 text-center">Blossoms Ivy</h3>
-            <div className="gold-gradient-text drop-shadow-gold font-sans font-semibold mb-2 relative z-10 text-center">Kileleshwa</div>
-            <p className="gold-gradient-text drop-shadow-gold font-sans font-thin mb-6 relative z-10 text-center">Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience.</p>
-            <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Blossoms Ivy</a>
+            <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
+              <img src="/designs/blossom.jpg" alt="Blossoms Ivy" className="object-cover w-full h-full" />
+            </div>
+            <h3 className="text-2xl font-sans font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">BLOSSOMS IVY</h3>
+            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-sans font-semibold mb-2 relative z-10 text-center">Kileleshwa</div>
+            <p className="text-black group-hover:text-white/90 transition-colors duration-300 font-sans font-medium mb-6 relative z-10 text-center flex-grow">Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience.</p>
+            <div className="relative z-10 w-full flex flex-col gap-3 mt-auto">
+              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">EXPLORE BLOSSOMS IVY</a>
+            </div>
           </div>
           {/* Luckinn Ivy Card */}
-          <div className="relative group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-[#dcd6cc] rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-luckinn-ivy" />
-            <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
-              <img src="/designs/Exterior_04_IA.png" alt="Luckinn Ivy" className="object-cover w-full h-full" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
+              <div className="absolute inset-0 bg-luckinn-ivy" />
+              <div className="absolute inset-0 bg-black/50" />
             </div>
-            <h3 className="text-2xl font-sans font-bold gold-gradient-text drop-shadow-gold mb-1 relative z-10 text-center">Luckinn Ivy</h3>
-            <div className="gold-gradient-text drop-shadow-gold font-sans font-semibold mb-2 relative z-10 text-center">Westlands</div>
-            <p className="gold-gradient-text drop-shadow-gold font-sans font-thin mb-6 relative z-10 text-center">Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families.</p>
-            <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Luckinn Ivy</a>
+            <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
+              <img src="/designs/Luckinn Ivy.jpg" alt="Luckinn Ivy" className="object-cover w-full h-full" />
+            </div>
+            <h3 className="text-2xl font-sans font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">LUCKINN IVY</h3>
+            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-sans font-semibold mb-2 relative z-10 text-center">Westlands</div>
+            <p className="text-black/70 group-hover:text-white/90 transition-colors duration-300 font-sans font-medium mb-6 relative z-10 text-center flex-grow">Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families.</p>
+            <div className="relative z-10 w-full flex flex-col gap-3 mt-auto">
+              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">Explore Luckinn Ivy</a>
+            </div>
           </div>
           {/* Ivy Park Card */}
-          <div className="relative group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
+          <div className="relative group bg-[#dcd6cc] rounded-2xl shadow-lg p-6 flex flex-col items-center w-[340px] xl:w-[370px] transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden">
             {/* Hover background image */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-0 bg-ivy-park" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
+              <div className="absolute inset-0 bg-ivy-park" />
+              <div className="absolute inset-0 bg-black/50" />
+            </div>
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/Exterior_07_IA.png" alt="Ivy Park" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-sans font-bold gold-gradient-text drop-shadow-gold mb-1 relative z-10 text-center">Ivy Park</h3>
-            <div className="gold-gradient-text drop-shadow-gold font-sans font-semibold mb-2 relative z-10 text-center">Kilimani</div>
-            <p className="gold-gradient-text drop-shadow-gold font-sans font-thin mb-6 relative z-10 text-center">Sophisticated residences in prestigious Kilimani, combining luxury with accessibility.</p>
-            <a href="#" className="w-full bg-[#f7e7b4]/90 text-blue-900 py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Ivy Park</a>
+            <h3 className="text-2xl font-sans font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">IVY PARK</h3>
+            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-sans font-semibold mb-2 relative z-10 text-center">Kilimani</div>
+            <p className="text-black/70 group-hover:text-white/90 transition-colors duration-300 font-sans font-medium mb-6 relative z-10 text-center flex-grow">Sophisticated residences in prestigious Kilimani, combining luxury with accessibility.</p>
+            <div className="relative z-10 w-full flex flex-col gap-3 mt-auto">
+              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">Explore Ivy Park</a>
+            </div>
           </div>
-        <style jsx>{`
-              <a href="#" className="w-full bg-[#f7e7b4]/90 text-black py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Blossoms Ivy</a>
-            .group.bg-white {
-              <a href="#" className="w-full bg-[#f7e7b4]/90 text-black py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Luckinn Ivy</a>
-              max-width: 22rem;
-              <a href="#" className="w-full bg-[#f7e7b4]/90 text-black py-3 rounded-full font-semibold shadow-lg hover:bg-gold hover:text-white transition relative z-10 block gold-btn-border text-lg tracking-wide text-center">Explore Ivy Park</a>
-            }
-          }
-        `}</style>
         <style jsx global>{`
           .gold-gradient-text {
             background: linear-gradient(90deg, #e5c97b 0%, #f7e7b4 50%, #bfa14a 100%);
@@ -364,7 +370,7 @@ export default function Home() {
             </div>
           </div>
           {/* Call Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
             <span className="text-3xl mb-4 text-[#d6c07a]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25m-19.5 0v.243a2.25 2.25 0 00.659 1.591l7.591 7.591a2.25 2.25 0 003.182 0l7.591-7.591A2.25 2.25 0 0021.75 6.993V6.75" /></svg>
             </span>
@@ -379,7 +385,7 @@ export default function Home() {
             </div>
           </div>
           {/* Visit Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
             <span className="text-3xl mb-4 text-[#d6c07a]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" /></svg>
             </span>

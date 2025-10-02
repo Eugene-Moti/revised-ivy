@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function GallerySection() {
@@ -18,9 +18,6 @@ export default function GallerySection() {
     "/designs/IMG-20250709-WA0090.jpg",
   ];
   const groupSize = 3;
-interface GalleryGroup {
-    images: string[];
-}
 
 const groups: string[][] = [];
   for (let i = 0; i < images.length; i += groupSize) {

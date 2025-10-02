@@ -152,7 +152,7 @@ export default function BlogPage() {
       {/* Main Blog Content */}
       <>
       {/* Navbar (copied from home page) */}
-      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-white/95 rounded-none shadow border-b border-gold/40 font-sans font-thin">
+      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#fcfbf7]/95 backdrop-blur-sm rounded-none shadow border-b border-gold/40 font-sans font-thin">
         <div className="flex items-center gap-3">
           <Image
             src="/designs/Ivy_logo.png"
