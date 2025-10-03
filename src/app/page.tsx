@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link"; 
 import { useState } from "react";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import GallerySection from "./GallerySection";
 import GalleryCard from "./GalleryCard";
 
@@ -82,7 +83,7 @@ export default function Home() {
           />
         </div>
         {/* Navbar (copied from blog page for consistency) */}
-        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#fcfbf7]/95 backdrop-blur-sm rounded-none shadow border-b border-gold/40 font-sans font-thin">
+        <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#e9ede9]/95 backdrop-blur-sm rounded-none shadow border-b border-gold/40 font-sans font-thin">
           <div className="flex items-center gap-3">
             <Image
               src="/designs/Ivy_logo.png"
@@ -93,7 +94,7 @@ export default function Home() {
               priority
             />
             <div className="flex flex-col leading-tight">
-              <span className="ivy-logo-text">The Ivy Group</span>
+              <span className="ivy-logo-text">IVY GROUP</span>
               <span className="ivy-logo-subtitle">Premium Real Estate</span>
             </div>
           </div>
@@ -105,15 +106,15 @@ export default function Home() {
           </button>
           {/* Desktop Nav */}
           <div className="hidden md:flex flex-1 items-center">
-            <ul className="flex flex-1 justify-center items-center gap-6 text-base font-medium">
+            <ul className="flex flex-1 justify-center items-center gap-10 text-base font-medium">
               <li>
                 <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">HOME</Link>
               </li>
-              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">BUY</a></li>
-              <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">LET</a></li>
-              <li><Link href="/about" className="text-black/80 hover:text-black nav-tab relative">ABOUT</Link></li>
-              <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">CONTACT</a></li>
-              <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">BLOG</a></li>
+              <li><a href="#" className="text-black/80 font-semibold hover:text-black nav-tab relative">BUY</a></li>
+              <li><a href="#" className="text-black/80 font-semibold hover:text-black nav-tab relative">LET</a></li>
+              <li><Link href="/about" className="text-black/80 font-semibold hover:text-black nav-tab relative">ABOUT</Link></li>
+              <li><a href="/contact" className="text-black/80 font-semibold hover:text-black nav-tab relative">CONTACT</a></li>
+              <li><a href="/blog" className="text-black/80 font-semibold hover:text-black nav-tab relative">BLOG</a></li>
             </ul>
             <a href="/book-reservation" className="ml-8 bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
           </div>
@@ -122,13 +123,13 @@ export default function Home() {
           <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6 font-sans font-thin`}>
             <ul className="flex flex-col gap-6 text-lg font-semibold">
               <li>
-                <Link href="/" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)} aria-label="Home">Home</Link>
+                <Link href="/" className="text-black nav-tab font-medium" onClick={()=>setNavOpen(false)} aria-label="Home">Home</Link>
               </li>
-              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Buy</a></li>
-              <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
-            <li><Link href="/about" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</Link></li>
-              <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
-              <li><a href="/blog" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
+              <li><a href="#" className="text-black nav-tab font-medium" onClick={()=>setNavOpen(false)}>Buy</a></li>
+              <li><a href="#" className="text-black nav-tab font-medium" onClick={()=>setNavOpen(false)}>Let</a></li>
+            <li><Link href="/about" className="text-black nav-tab font-medium" onClick={()=>setNavOpen(false)}>About</Link></li>
+              <li><a href="/contact" className="text-black nav-tab font-medium" onClick={()=>setNavOpen(false)}>Contact</a></li>
+              <li><a href="/blog" className="text-black nav-tab font-medium" onClick={()=>setNavOpen(false)}>Blog</a></li>
             </ul>
             <a href="/book-reservation" className="bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center font-thin" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
           </div>
@@ -184,13 +185,13 @@ export default function Home() {
   <section className="relative z-10 w-full flex flex-col items-center py-20 bg-cover bg-center bg-premium-locations">
       <div className="absolute inset-0 bg-black/70 z-0" />
       <div className="relative z-10 w-full flex flex-col items-center">
-  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Our Premium Locations</h2>
+  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">OUR PREMIUM LOCATIONS</h2>
     <div className="flex items-center justify-center w-full mb-8">
       <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
       <span className="text-[#e5d7a3] text-2xl">★</span>
       <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
     </div>
-    <p className="text-lg text-gray-100 text-center mb-12 max-w-2xl font-sans font-thin">
+    <p className="text-lg text-gray-100 text-center mb-12 max-w-2xl font-serif font-medium">
       Three exceptional developments across Nairobi&apos;s most prestigious neighborhoods
     </p>
     <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 md:gap-8 px-2 md:px-4 justify-center items-center space-y-6 md:space-y-0">
@@ -204,11 +205,11 @@ export default function Home() {
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/blossom.jpg" alt="Blossoms Ivy" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-sans font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">BLOSSOMS IVY</h3>
-            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-sans font-semibold mb-2 relative z-10 text-center">Kileleshwa</div>
-            <p className="text-black group-hover:text-white/90 transition-colors duration-300 font-sans font-medium mb-6 relative z-10 text-center flex-grow">Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience.</p>
+            <h3 className="text-2xl font-serif font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">BLOSSOMS IVY</h3>
+            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-serif font-semibold mb-2 relative z-10 text-center">Kileleshwa</div>
+            <p className="text-black group-hover:text-white/90 transition-colors duration-300 font-serif font-medium mb-6 relative z-10 text-center flex-grow">Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience.</p>
             <div className="relative z-10 w-full flex flex-col gap-3 mt-auto">
-              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">EXPLORE BLOSSOMS IVY</a>
+              <a href="https://www.blossomsivy.ke/" target="_blank" rel="noopener noreferrer" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-serif font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">EXPLORE BLOSSOMS IVY</a>
             </div>
           </div>
           {/* Luckinn Ivy Card */}
@@ -221,11 +222,11 @@ export default function Home() {
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/Luckinn Ivy.jpg" alt="Luckinn Ivy" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-sans font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">LUCKINN IVY</h3>
-            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-sans font-semibold mb-2 relative z-10 text-center">Westlands</div>
-            <p className="text-black/70 group-hover:text-white/90 transition-colors duration-300 font-sans font-medium mb-6 relative z-10 text-center flex-grow">Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families.</p>
+            <h3 className="text-2xl font-serif font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">LUCKINN IVY</h3>
+            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-serif font-semibold mb-2 relative z-10 text-center">Westlands</div>
+            <p className="text-black/70 group-hover:text-white/90 transition-colors duration-300 font-serif font-medium mb-6 relative z-10 text-center flex-grow">Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families.</p>
             <div className="relative z-10 w-full flex flex-col gap-3 mt-auto">
-              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">Explore Luckinn Ivy</a>
+              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-serif font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">EXPLORE LUCKINN IVY</a>
             </div>
           </div>
           {/* Ivy Park Card */}
@@ -238,9 +239,9 @@ export default function Home() {
             <div className="relative z-10 w-full h-36 mb-4 overflow-hidden rounded-xl animate-slide-up">
               <img src="/designs/Exterior_07_IA.png" alt="Ivy Park" className="object-cover w-full h-full" />
             </div>
-            <h3 className="text-2xl font-sans font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">IVY PARK</h3>
-            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-sans font-semibold mb-2 relative z-10 text-center">Kilimani</div>
-            <p className="text-black/70 group-hover:text-white/90 transition-colors duration-300 font-sans font-medium mb-6 relative z-10 text-center flex-grow">Sophisticated residences in prestigious Kilimani, combining luxury with accessibility.</p>
+            <h3 className="text-2xl font-serif font-bold text-black group-hover:text-white transition-colors duration-300 mb-1 relative z-10 text-center">IVY PARK</h3>
+            <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-serif font-semibold mb-2 relative z-10 text-center">Kilimani</div>
+            <p className="text-black/70 group-hover:text-white/90 transition-colors duration-300 font-serif font-medium mb-6 relative z-10 text-center flex-grow">Sophisticated residences in prestigious Kilimani, combining luxury with accessibility.</p>
             <div className="relative z-10 w-full flex flex-col gap-3 mt-auto">
               <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">Explore Ivy Park</a>
             </div>
@@ -266,14 +267,14 @@ export default function Home() {
 
       {/* Apartment Collections Section */}
   <section className="w-full flex flex-col items-center py-20 bg-[#fcfbf7]">
-  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Apartment Collections</h2>
+  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">APARTMENTS COLLECTIONS</h2>
   {/* Apartment Collections: soft cream background */}
     <div className="flex items-center justify-center w-full mb-8">
       <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
       <span className="text-[#e5d7a3] text-2xl">★</span>
       <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
     </div>
-  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-sans font-thin">Choose from our range of meticulously designed living spaces</p>
+  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-serif font-medium">Choose from our range of meticulously designed living spaces</p>
   <div className="w-full max-w-7xl flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-8 px-2 sm:px-0 justify-center items-center">
       {/* 1-Bedroom */}
       <div className="relative rounded-xl overflow-hidden shadow-xl w-[270px] h-[270px] flex items-center justify-center group">
@@ -310,43 +311,16 @@ export default function Home() {
     </div>
   </section>
 
-      {/* Gallery Section */}
-  {/* Gallery Section - Modern Card Style */}
-  <section className="w-full flex flex-col items-center py-20 bg-[#f7f7fa]">
-  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Gallery</h2>
-        <div className="flex items-center justify-center w-full mb-8">
-          <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
-          <span className="text-[#e5d7a3] text-2xl">★</span>
-          <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
-        </div>
-  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-sans font-thin">Explore our stunning apartment renders and completed projects</p>
-  <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-2 md:px-4 animate-fade-in">
-          {/* Gallery Images - Use the same images as before */}
-          <GalleryCard img="/designs/IMG-20250709-WA0079.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0080.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0081.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0082.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0083.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0084.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0085.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0086.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0087.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0088.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0089.jpg" />
-          <GalleryCard img="/designs/IMG-20250709-WA0090.jpg" />
-        </div>
-      </section>
-
       {/* Get In Touch Section - Modern Card Style */}
   {/* Get In Touch Section: light sage background */}
   <section className="w-full py-24 flex flex-col items-center justify-center bg-[#e9ede9]">
-  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">Get in touch</h2>
+  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">GET IN TOUCH</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
           <span className="text-[#e5d7a3] text-2xl">★</span>
           <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
         </div>
-  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-sans font-thin">Subscribe to our newsletters to be the first to hear the latest news about what is happening in the real estate market.</p>
+  <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-serif font-medium">Subscribe to our newsletters to be the first to hear the latest news about what is happening in the real estate market.</p>
   <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-2 md:px-4 mb-12 animate-fade-in">
           {/* Email Card */}
           <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
@@ -354,9 +328,9 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" /></svg>
             </span>
             <div>
-              <div className="text-xl font-sans font-thin text-gray-900 mb-2 tracking-wide">The Ivy Group</div>
-              <div className="text-gray-600 mb-1">Email Via:</div>
-              <div className="text-base text-gray-700 mb-6">blossomivymarketing@gmail.com</div>
+              <div className="text-xl font-serif font-medium font-semibold text-gray-900 mb-2 tracking-wide">IVY GROUP</div>
+              <div className="text-gray-600 mb-1 font-serif font-medium">Email Via:</div>
+              <div className="text-base text-gray-700 font-serif font-medium mb-6">blossomivymarketing@gmail.com</div>
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
               <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
@@ -370,14 +344,14 @@ export default function Home() {
             </div>
           </div>
           {/* Call Card */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
             <span className="text-3xl mb-4 text-[#d6c07a]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25m-19.5 0v.243a2.25 2.25 0 00.659 1.591l7.591 7.591a2.25 2.25 0 003.182 0l7.591-7.591A2.25 2.25 0 0021.75 6.993V6.75" /></svg>
             </span>
             <div>
-              <div className="text-xl font-sans font-thin text-gray-900 mb-2 tracking-wide">CALL US</div>
-              <div className="text-gray-600 mb-1">Call us via:</div>
-              <div className="text-base text-gray-700 mb-6">+254798888866<br/>+254799008564</div>
+              <div className="text-xl font-serif font-medium font-semibold text-gray-900 mb-2 tracking-wide">CALL US</div>
+              <div className="text-gray-600 mb-1 font-serif font-medium">Call us via:</div>
+              <div className="text-base text-gray-700 mb-6 font-serif font-medium">+254798888866<br/>+254799008564</div>
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
               <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
@@ -385,13 +359,14 @@ export default function Home() {
             </div>
           </div>
           {/* Visit Card */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
             <span className="text-3xl mb-4 text-[#d6c07a]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" /></svg>
             </span>
             <div>
-              <div className="text-xl font-sans font-thin text-gray-900 mb-2 tracking-wide">VISIT OUR OFFICES</div>
-              <div className="text-gray-600 mb-1">Gatundu Road, Kileleshwa.</div>
+              <div className="text-xl font-serif font-semibold font-medium text-gray-900 mb-2 tracking-wide">VISIT OUR OFFICES</div>
+              <div className="text-gray-600 mb-1 font-serif font-medium">Visit us at:</div>
+              <div className="text-base text-gray-700 mb-6 font-serif font-medium">Gatundu Road, Kileleshwa.</div>
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
               <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
@@ -411,50 +386,45 @@ export default function Home() {
         </div>
       </section>
       {/* Footer Section */}
-      <footer className="w-full bg-[#151c27] text-white pt-12 pb-4 px-4 border-t border-[#35521a]/30 mt-0">
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 md:gap-10 pb-6 border-b border-white/10 animate-fade-in">
+      <footer className="w-full bg-[#1c1c1c] text-white/80 pt-16 pb-8 px-4 font-sans font-thin">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
           {/* Brand & Description */}
-          <div className="flex-1 min-w-[220px] flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2 mb-2">
-              <span className="p-2 rounded-lg">
-                <Image src="/designs/Ivy_logo.png" alt="Ivy Group Logo" width={28} height={28} className="rounded" />
-              </span>
-              <span className="text-xl font-bold">The Ivy Group</span>
+              <Image src="/designs/Ivy_logo.png" alt="Ivy Group Logo" width={36} height={36} className="rounded" />
+              <span className="text-2xl font-serif text-white">The Ivy Group</span>
             </div>
-            <div className="text-gray-300 text-base leading-snug">The Ivy Group Kenya is a premier real estate and property development company based in Nairobi. We specialize in creating modern, elegant, and investment-worthy developments that redefine upscale living in the city.</div>
+            <div className="text-sm leading-relaxed">The Ivy Group Kenya is a premier real estate and property development company based in Nairobi. We specialize in creating modern, elegant, and investment-worthy developments that redefine upscale living in the city.</div>
           </div>
           {/* Quick Links */}
-          <div className="flex-1 min-w-[160px]">
-            <div className="font-bold mb-3">Quick Links</div>
-            <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-[#bfa544]">Home</a></li>
-              <li><a href="#" className="hover:text-[#bfa544]">Buy</a></li>
-              <li><a href="#" className="hover:text-[#bfa544]">Let</a></li>
-              <li><a href="#" className="hover:text-[#bfa544]">About</a></li>
+          <div>
+            <h3 className="text-lg font-serif font-semibold text-white mb-4">Quick Links</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="/" className="hover:text-gold transition-colors">Home</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Buy</a></li>
+              <li><a href="#" className="hover:text-gold transition-colors">Let</a></li>
+              <li><a href="/about" className="hover:text-gold transition-colors">About</a></li>
+              <li><a href="/contact" className="hover:text-gold transition-colors">Contact</a></li>
             </ul>
           </div>
-          {/* Our Locations */}
-          <div className="flex-1 min-w-[180px]">
-            <div className="font-bold mb-3">Our Locations</div>
-            <ul className="space-y-2 text-gray-300">
-              <li>Blossoms Ivy - Kileleshwa</li>
-              <li>Luckinn Ivy - Westlands</li>
-              <li>Ivy Park - Kilimani</li>
-            </ul>
-          </div>
-          {/* Social Links */}
-          <div className="flex-1 min-w-[160px]">
-            <div className="font-bold mb-3">Follow Us</div>
-            <div className="flex gap-4 text-2xl">
-              <a href="#" aria-label="Facebook" className="hover:text-[#bfa544]"><i className="fab fa-facebook-f"></i> <span className="sr-only">Facebook</span></a>
-              <a href="#" aria-label="Twitter" className="hover:text-[#bfa544]"><i className="fab fa-twitter"></i> <span className="sr-only">Twitter</span></a>
-              <a href="#" aria-label="Instagram" className="hover:text-[#bfa544]"><i className="fab fa-instagram"></i> <span className="sr-only">Instagram</span></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-[#bfa544]"><i className="fab fa-linkedin-in"></i> <span className="sr-only">LinkedIn</span></a>
-            </div>
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-lg font-serif font-semibold text-white mb-4">Newsletter</h3>
+            <p className="text-sm mb-4">Subscribe for the latest market insights and property alerts.</p>
+            <form className="flex">
+              <input type="email" placeholder="Your email" className="bg-white/10 border border-white/20 text-white px-3 py-2 rounded-l-md text-sm w-full focus:outline-none focus:ring-2 focus:ring-gold" />
+              <button type="submit" className="bg-gold text-black px-4 py-2 rounded-r-md font-semibold text-sm hover:bg-[#c8b05a] transition-colors">Subscribe</button>
+            </form>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-gray-400 text-sm">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-white/60 text-sm gap-4">
           <div>© {new Date().getFullYear()} The Ivy Group. All rights reserved.</div>
+          <div className="flex gap-5 text-lg">
+            <a href="#" aria-label="Facebook" className="hover:text-gold transition-colors"><FaFacebookF /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-gold transition-colors"><FaTwitter /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-gold transition-colors"><FaInstagram /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-gold transition-colors"><FaLinkedinIn /></a>
+          </div>
         </div>
       </footer>
         {/* WhatsApp Floating Button with Tooltip */}

@@ -235,10 +235,10 @@ export default function ContactPage() {
           <div className="flex-1 min-w-[160px]">
             <div className="font-bold mb-3">Follow Us</div>
             <div className="flex gap-4 text-2xl">
-              <a href="#" aria-label="Facebook" className="hover:text-[#bfa544]"><i className="fab fa-facebook-f"></i> <span className="sr-only">Facebook</span></a>
-              <a href="#" aria-label="Twitter" className="hover:text-[#bfa544]"><i className="fab fa-twitter"></i> <span className="sr-only">Twitter</span></a>
-              <a href="#" aria-label="Instagram" className="hover:text-[#bfa544]"><i className="fab fa-instagram"></i> <span className="sr-only">Instagram</span></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-[#bfa544]"><i className="fab fa-linkedin-in"></i> <span className="sr-only">LinkedIn</span></a>
+              <a href="#" aria-label="Facebook" className="hover:text-[#bfa544]"><FaFacebookF /></a>
+              <a href="#" aria-label="Twitter" className="hover:text-[#bfa544]"><FaTwitter /></a>
+              <a href="#" aria-label="Instagram" className="hover:text-[#bfa544]"><FaInstagram /></a>
+              <a href="#" aria-label="LinkedIn" className="hover:text-[#bfa544]"><FaLinkedinIn /></a>
             </div>
           </div>
         </div>
