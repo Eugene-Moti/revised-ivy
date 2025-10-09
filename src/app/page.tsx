@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link"; 
 import { useState } from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa';
 import GallerySection from "./GallerySection";
 import GalleryCard from "./GalleryCard";
 
@@ -108,13 +108,13 @@ export default function Home() {
           <div className="hidden md:flex flex-1 items-center">
             <ul className="flex flex-1 justify-center items-center gap-10 text-base font-medium">
               <li>
-                <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">HOME</Link>
+                <Link href="/" className="text-black font-semibold nav-tab relative font-Serif" aria-label="Home">HOME</Link>
               </li>
-              <li><a href="#" className="text-black/80 font-semibold hover:text-black nav-tab relative">BUY</a></li>
-              <li><a href="#" className="text-black/80 font-semibold hover:text-black nav-tab relative">LET</a></li>
-              <li><Link href="/about" className="text-black/80 font-semibold hover:text-black nav-tab relative">ABOUT</Link></li>
-              <li><a href="/contact" className="text-black/80 font-semibold hover:text-black nav-tab relative">CONTACT</a></li>
-              <li><a href="/blog" className="text-black/80 font-semibold hover:text-black nav-tab relative">BLOG</a></li>
+              <li><a href="#" className="text-black/80 font-semibold hover:text-black nav-tab relative font-Serif">BUY</a></li>
+              <li><a href="#" className="text-black/80 font-semibold hover:text-black nav-tab relative font-Serif">LET</a></li>
+              <li><Link href="/about" className="text-black/80 font-semibold hover:text-black nav-tab relative font-Serif">ABOUT</Link></li>
+              <li><a href="/contact" className="text-black/80 font-semibold hover:text-black nav-tab relative font-Serif">CONTACT</a></li>
+              <li><a href="/blog" className="text-black/80 font-semibold hover:text-black nav-tab relative font-Serif">BLOG</a></li>  
             </ul>
             <a href="/book-reservation" className="ml-8 bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
           </div>
@@ -243,7 +243,7 @@ export default function Home() {
             <div className="text-black/80 group-hover:text-white/90 transition-colors duration-300 font-serif font-semibold mb-2 relative z-10 text-center">Kilimani</div>
             <p className="text-black/70 group-hover:text-white/90 transition-colors duration-300 font-serif font-medium mb-6 relative z-10 text-center flex-grow">Sophisticated residences in prestigious Kilimani, combining luxury with accessibility.</p>
             <div className="relative z-10 w-full flex flex-col gap-3 mt-auto">
-              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">Explore Ivy Park</a>
+              <a href="#" className="w-full bg-[#f5f2ea] text-black py-2.5 rounded-full font-semibold shadow-lg hover:bg-[#c8b05a] transition text-base tracking-wide text-center group-hover:bg-white group-hover:text-black">EXPLORE IVY PARK</a>
             </div>
           </div>
         <style jsx global>{`
@@ -266,10 +266,9 @@ export default function Home() {
       </section>
 
       {/* Apartment Collections Section */}
-  <section className="w-full flex flex-col items-center py-20 bg-[#fcfbf7]">
-  <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">APARTMENTS COLLECTIONS</h2>
-  {/* Apartment Collections: soft cream background */}
-    <div className="flex items-center justify-center w-full mb-8">
+            <section className="w-full flex flex-col items-center py-20 bg-[#e9ede9]">
+        <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">APARTMENT COLLECTIONS</h2>
+        <div className="flex items-center justify-center w-full mb-8">
       <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
       <span className="text-[#e5d7a3] text-2xl">★</span>
       <div className="h-0.5 w-32 bg-[#e5d7a3] ml-2" />
@@ -313,7 +312,7 @@ export default function Home() {
 
       {/* Get In Touch Section - Modern Card Style */}
   {/* Get In Touch Section: light sage background */}
-  <section className="w-full py-24 flex flex-col items-center justify-center bg-[#e9ede9]">
+  <section className="w-full py-24 flex flex-col items-center justify-center bg-white">
   <h2 className="text-3xl md:text-4xl text-center mb-2 ivy-logo-text">GET IN TOUCH</h2>
         <div className="flex items-center justify-center w-full mb-8">
           <div className="h-0.5 w-32 bg-[#e5d7a3] mr-2" />
@@ -413,18 +412,20 @@ export default function Home() {
             <p className="text-sm mb-4">Subscribe for the latest market insights and property alerts.</p>
             <form className="flex">
               <input type="email" placeholder="Your email" className="bg-white/10 border border-white/20 text-white px-3 py-2 rounded-l-md text-sm w-full focus:outline-none focus:ring-2 focus:ring-gold" />
-              <button type="submit" className="bg-gold text-black px-4 py-2 rounded-r-md font-semibold text-sm hover:bg-[#c8b05a] transition-colors">Subscribe</button>
+              <button type="submit" className="bg-gold text-orange px-4 py-2 rounded-r-md font-semibold text-sm hover:bg-[#c8b05a] transition-colors">Subscribe</button>
             </form>
           </div>
-        </div>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-white/60 text-sm gap-4">
-          <div>© {new Date().getFullYear()} The Ivy Group. All rights reserved.</div>
-          <div className="flex gap-5 text-lg">
+          <div>
+          <h3 className="text-lg font-serif font-semibold text-white mb-4">Follow Us</h3>
+          <div className="flex gap-5 text-lg mb-4">
             <a href="#" aria-label="Facebook" className="hover:text-gold transition-colors"><FaFacebookF /></a>
-            <a href="#" aria-label="Twitter" className="hover:text-gold transition-colors"><FaTwitter /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-gold transition-colors"><FaTiktok /></a>
             <a href="#" aria-label="Instagram" className="hover:text-gold transition-colors"><FaInstagram /></a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-gold transition-colors"><FaLinkedinIn /></a>
           </div>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto flex flex-co l md:flex-row justify-between items-center pt-6 text-white/60 text-sm gap-4">
+          <div>© {new Date().getFullYear()} The Ivy Group. All rights reserved.</div>
         </div>
       </footer>
         {/* WhatsApp Floating Button with Tooltip */}
