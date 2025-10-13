@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaTiktok, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-serif font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm">
-            <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
+            <li><a href="/" className="hover:text-gold transition-colors">Home</a></li>
             <li><a href="#" className="hover:text-gold transition-colors">Buy</a></li>
             <li><a href="#" className="hover:text-gold transition-colors">Let</a></li>
             <li><Link href="/about" className="hover:text-gold transition-colors">About</Link></li>
@@ -33,18 +33,20 @@ export default function Footer() {
           <p className="text-sm mb-4">Subscribe for the latest market insights and property alerts.</p>
           <form className="flex">
             <input type="email" placeholder="Your email" className="bg-white/10 border border-white/20 text-white px-3 py-2 rounded-l-md text-sm w-full focus:outline-none focus:ring-2 focus:ring-gold" />
-            <button type="submit" className="bg-gold text-black px-4 py-2 rounded-r-md font-semibold text-sm hover:bg-[#c8b05a] transition-colors">Subscribe</button>
+            <button type="submit" className="bg-gold text-orange px-4 py-2 rounded-r-md font-semibold text-sm hover:bg-[#c8b05a] transition-colors">Subscribe</button>
           </form>
+        </div>
+        <div>
+          <h3 className="text-lg font-serif font-semibold text-white mb-4">Follow Us</h3>
+          <div className="flex gap-5 text-lg mb-4">
+            <a href="#" aria-label="Facebook" className="hover:text-gold transition-colors"><FaFacebookF /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-gold transition-colors"><FaTiktok /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-gold transition-colors"><FaInstagram /></a>
+          </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-white/60 text-sm gap-4">
         <div>© {new Date().getFullYear()} The Ivy Group. All rights reserved.</div>
-        <div className="flex gap-5 text-lg">
-          <a href="#" aria-label="Facebook" className="hover:text-gold transition-colors"><FaFacebookF /></a>
-          <a href="#" aria-label="Twitter" className="hover:text-gold transition-colors"><FaTwitter /></a>
-          <a href="#" aria-label="Instagram" className="hover:text-gold transition-colors"><FaInstagram /></a>
-          <a href="#" aria-label="LinkedIn" className="hover:text-gold transition-colors"><FaLinkedinIn /></a>
-        </div>
       </div>
     </footer>
   );

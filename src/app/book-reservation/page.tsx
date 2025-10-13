@@ -1,76 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaCheckCircle } from "react-icons/fa";
+import Image from "next/image";
 
 // Home page navbar/footer code is reused here
 export default function BookReservation() {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <div className="bg-gradient-to-b from-[#fcfbf7] via-[#f7f6f2] to-[#fcfbf7] min-h-screen flex flex-col">
-      {/* Navbar with improved logo/name styling */}
-      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#fcfbf7]/95 backdrop-blur-sm rounded-none shadow border-b border-gold/40 font-sans font-thin">
-        <div className="flex items-center gap-3">
-          <Image src="/designs/Ivy_logo.png" alt="Ivy Logo" width={48} height={48} className="" priority />
-          <div className="flex flex-col leading-tight">
-            <span className="ivy-logo-text">The Ivy Group</span>
-            <span className="ivy-logo-subtitle">Premium Real Estate</span>
-          </div>
-        </div>
-        {/* Desktop Nav */}
-        <div className="hidden md:flex flex-1 items-center">
-          <ul className="flex flex-1 justify-center items-center gap-6 text-base font-medium">
-            <li><Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">Home</Link></li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Buy</a></li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
-            <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
-            <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
-          </ul>
-          <a href="/book-reservation" className="ml-8 bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
-        </div>
-        {/* Hamburger for mobile */}
-        <button className="md:hidden flex flex-col justify-center items-center ml-auto z-30" onClick={() => setNavOpen(!navOpen)} aria-label="Open Menu">
-          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 ${navOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-        </button>
-        {/* Mobile Nav Overlay */}
-        <div className={`fixed inset-0 bg-black/60 z-20 transition-opacity duration-300 ${navOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
-        <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6 font-sans font-thin`}>
-          <ul className="flex flex-col gap-6 text-lg font-semibold">
-            <li><Link href="/" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)} aria-label="Home">Home</Link></li>
-            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Buy</a></li>
-            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
-            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
-            <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
-            <li><a href="/blog" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
-          </ul>
-          <a href="/book-reservation" className="bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center font-thin" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
-        </div>
-        <style>{`
-          .nav-tab::after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -2px;
-            height: 3px;
-            background: linear-gradient(90deg, #ff9900 60%, #ffb84d 100%);
-            border-radius: 2px;
-            opacity: 0;
-            transform: scaleX(0);
-            transition: opacity 0.2s, transform 0.2s;
-          }
-          .nav-tab:hover::after, .nav-tab:focus::after {
-            opacity: 1;
-            transform: scaleX(1);
-          }
-        `}</style>
-      </nav>
-
       {/* Luxury Reservation Form Section */}
       <main className="flex-1 flex flex-col md:flex-row items-stretch justify-center gap-0 md:gap-8 px-4 py-12 max-w-6xl mx-auto w-full">
         {/* Left Panel: Info/Visuals */}

@@ -25,9 +25,9 @@ export default function Navbar() {
       </div>
       {/* Hamburger for mobile */}
       <button className="md:hidden flex flex-col justify-center items-center ml-auto z-30" onClick={() => setNavOpen(!navOpen)} aria-label="Open Menu">
-        <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-        <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 ${navOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        <span className={`block w-7 h-0.5 bg-gray-800 rounded transition-all duration-300 mb-1.5 ${navOpen ? 'rotate-45 translate-y-2' : ''}`} />
+        <span className={`block w-7 h-0.5 bg-gray-800 rounded transition-all duration-300 mb-1.5 ${navOpen ? 'opacity-0' : ''}`} />
+        <span className={`block w-7 h-0.5 bg-gray-800 rounded transition-all duration-300 ${navOpen ? '-rotate-45 -translate-y-2' : ''}`} />
       </button>
       {/* Desktop Nav */}
       <div className="hidden md:flex flex-1 items-center">

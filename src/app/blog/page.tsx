@@ -151,79 +151,6 @@ export default function BlogPage() {
   return (
     <div className="bg-gradient-to-b from-[#fcfbf7] via-[#f7f6f2] to-[#fcfbf7] min-h-screen">
       {/* Main Blog Content */}
-      <>
-      {/* Navbar (copied from home page) */}
-      <nav className="relative z-20 flex items-center justify-between w-full mt-0 px-4 md:px-8 py-3 bg-[#fcfbf7]/95 backdrop-blur-sm rounded-none shadow border-b border-gold/40 font-sans font-thin">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/designs/Ivy_logo.png"
-            alt="Ivy Logo"
-            width={48}
-            height={48}
-            className=""
-            priority
-          />
-          <div className="flex flex-col leading-tight">
-            <span className="ivy-logo-text">The Ivy Group</span>
-            <span className="ivy-logo-subtitle">Premium Real Estate</span>
-          </div>
-        </div>
-        {/* Hamburger for mobile */}
-        <button className="md:hidden flex flex-col justify-center items-center ml-auto z-30" onClick={() => setNavOpen(!navOpen)} aria-label="Open Menu">
-          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 mb-1 ${navOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-7 h-1 bg-[#f7f7e7] rounded transition-all duration-300 ${navOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-        </button>
-        {/* Desktop Nav */}
-        <div className="hidden md:flex flex-1 items-center">
-          <ul className="flex flex-1 justify-center items-center gap-6 text-base font-medium">
-            <li>
-              <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">Home</Link>
-            </li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Buy</a></li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">Let</a></li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">About</a></li>
-            <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">Contact</a></li>
-            <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">Blog</a></li>
-          </ul>
-          <a href="/book-reservation" className="ml-8 bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center">Book a Reservation</a>
-        </div>
-        {/* Mobile Nav Overlay */}
-        <div className={`fixed inset-0 bg-black/60 z-20 transition-opacity duration-300 ${navOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
-        <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-30 transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col pt-24 px-6 gap-6 font-sans font-thin`}>
-          <ul className="flex flex-col gap-6 text-lg font-semibold">
-            <li>
-              <Link href="/" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)} aria-label="Home">Home</Link>
-            </li>
-            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Buy</a></li>
-            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Let</a></li>
-            <li><a href="#" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>About</a></li>
-            <li><a href="/contact" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Contact</a></li>
-            <li><a href="/blog" className="text-black nav-tab font-thin" onClick={()=>setNavOpen(false)}>Blog</a></li>
-          </ul>
-          <a href="/book-reservation" className="bg-gold text-black px-7 py-2 rounded-lg shadow font-semibold hover:bg-[#bfa14a] hover:text-white transition whitespace-nowrap min-w-[170px] text-center font-thin" onClick={()=>setNavOpen(false)}>Book a Reservation</a>
-        </div>
-        <style>{`
-          .nav-tab::after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -2px;
-            height: 3px;
-            background: linear-gradient(90deg, #ff9900 60%, #ffb84d 100%);
-            border-radius: 2px;
-            opacity: 0;
-            transform: scaleX(0);
-            transition: opacity 0.2s, transform 0.2s;
-          }
-          .nav-tab:hover::after, .nav-tab:focus::after {
-            opacity: 1;
-            transform: scaleX(1);
-          }
-        `}</style>
-      </nav>
       {/* Hero/Intro Section */}
       <section className="w-full bg-gradient-to-br from-[#fcfbf7] to-[#f7f6f2] border-b border-[#f2f1ec] py-16 px-4">
         <div className="max-w-5xl mx-auto">
@@ -317,55 +244,6 @@ export default function BlogPage() {
         </form>
         <div className="text-white/60 text-xs mt-3">No spam. Unsubscribe at any time.</div>
       </section>
-
-      {/* Footer */}
-      {/* Footer Section (copied from home page) */}
-      <footer className="w-full bg-[#151c27] text-white pt-12 pb-4 px-4 border-t border-[#35521a]/30 mt-0">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 md:gap-10 pb-6 border-b border-white/10 animate-fade-in">
-          {/* Brand & Description */}
-          <div className="flex-1 min-w-[220px] flex flex-col gap-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-[#151c27] p-2 rounded-lg">
-                <Image src="/designs/Ivy_logo.png" alt="Ivy Group Logo" width={28} height={28} className="rounded" />
-              </span>
-              <span className="text-xl font-bold">The Ivy Group</span>
-            </div>
-            <div className="text-gray-300 text-base leading-snug">Premium real estate solutions across Nairobi&apos;s most prestigious neighborhoods.</div>
-          </div>
-          {/* Quick Links */}
-          <div className="flex-1 min-w-[160px]">
-            <div className="font-bold mb-3">Quick Links</div>
-            <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-[#bfa544]">Home</a></li>
-              <li><a href="#" className="hover:text-[#bfa544]">Buy</a></li>
-              <li><a href="#" className="hover:text-[#bfa544]">Let</a></li>
-              <li><a href="#" className="hover:text-[#bfa544]">About</a></li>
-            </ul>
-          </div>
-          {/* Our Locations */}
-          <div className="flex-1 min-w-[180px]">
-            <div className="font-bold mb-3">Our Locations</div>
-            <ul className="space-y-2 text-gray-300">
-              <li>Blossoms Ivy - Kileleshwa</li>
-              <li>Luckinn Ivy - Westlands</li>
-              <li>Ivy Park - Kilimani</li>
-            </ul>
-          </div>
-          {/* Social Links */}
-          <div className="flex-1 min-w-[160px]">
-            <div className="font-bold mb-3">Follow Us</div>
-            <div className="flex gap-4 text-2xl">
-              <a href="#" aria-label="Facebook" className="hover:text-[#bfa544]"><FaFacebookF /></a>
-              <a href="#" aria-label="Twitter" className="hover:text-[#bfa544]"><FaTwitter /></a>
-              <a href="#" aria-label="Instagram" className="hover:text-[#bfa544]"><FaInstagram /></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-[#bfa544]"><FaLinkedinIn /></a>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-gray-400 text-sm">
-          <div>© {new Date().getFullYear()} The Ivy Group. All rights reserved.</div>
-        </div>
-      </footer>
       {/* WhatsApp Floating Button with Tooltip */}
       <div className="fixed bottom-8 right-8 flex items-center z-50 group">
         <div className="opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-200 mr-3 bg-[#25D366] text-white font-semibold px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-base pointer-events-none select-none">
@@ -376,7 +254,6 @@ export default function BlogPage() {
         </a>
       </div>
       <ContactFormModal open={contactModalOpen} onClose={() => setContactModalOpen(false)} />
-      </>
     </div>
   );
 }
