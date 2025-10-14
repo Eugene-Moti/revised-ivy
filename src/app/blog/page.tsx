@@ -155,7 +155,7 @@ export default function BlogPage() {
       <section className="w-full bg-gradient-to-br from-[#fcfbf7] to-[#f7f6f2] border-b border-[#f2f1ec] py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-serif font-extrabold text-[#232e47] mb-4 leading-tight animate-fade-in-up">Real Estate Insights & Market Intelligence</h1>
-          <p className="text-lg text-[#6b7280] mb-6 animate-fade-in-up delay-100">Stay informed with expert analysis, market trends, and luxury property insights from The Ivy Group&apos;s premium real estate specialists.</p>
+          <p className="text-lg text-[#6b7280] mb-6 animate-fade-in-up delay-100">Stay informed with expert analysis, market trends, and luxury property insights from IVY GROUP&apos;s premium real estate specialists.</p>
           <div className="flex gap-6 text-[#bfa14a] text-base mb-2 animate-fade-in-up delay-200">
             <span className="flex items-center gap-2"><span className="inline-block w-5 h-5">📅</span> Updated Weekly</span>
             <span className="flex items-center gap-2"><span className="inline-block w-5 h-5">👑</span> Expert Contributors</span>

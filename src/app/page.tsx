@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link"; 
 import { useState } from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaTiktok, FaPhoneAlt } from 'react-icons/fa';
 import GallerySection from "./GallerySection";
 import GalleryCard from "./GalleryCard";
 
@@ -250,9 +250,9 @@ export default function Home() {
   <p className="text-lg text-gray-900 text-center mb-16 max-w-2xl mx-auto font-serif font-medium">Subscribe to our newsletters to be the first to hear the latest news about what is happening in the real estate market.</p>
   <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-2 md:px-4 mb-12 animate-fade-in">
           {/* Email Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
-            <span className="text-3xl mb-4 text-[#d6c07a]">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" /></svg>
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl hover:scale-105 min-h-[260px] group">
+            <span className="text-3xl mb-4 text-[#d6c07a] group-hover:text-[#c4a85a] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" /></svg>
             </span>
             <div>
               <div className="text-xl font-serif font-medium font-semibold text-gray-900 mb-2 tracking-wide">IVY GROUP</div>
@@ -260,20 +260,23 @@ export default function Home() {
               <div className="text-base text-gray-700 font-serif font-medium mb-6">blossomivymarketing@gmail.com</div>
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
-              <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
+              <div className="h-1 w-16 bg-[#e5d7a3] mb-2 group-hover:w-20 transition-all duration-300" />
               <button
                 type="button"
-                className="text-[#d6c07a] font-bold hover:underline text-left mt-0 focus:outline-none"
+                className="bg-gradient-to-r from-[#e5d7a3] to-[#d6c07a] text-[#222] font-bold py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 flex items-center gap-2"
                 onClick={() => setContactModalOpen(true)}
               >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" />
+                </svg>
                 Get in touch
               </button>
             </div>
           </div>
           {/* Call Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
-            <span className="text-3xl mb-4 text-[#d6c07a]">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75m-19.5 0A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25m-19.5 0v.243a2.25 2.25 0 00.659 1.591l7.591 7.591a2.25 2.25 0 003.182 0l7.591-7.591A2.25 2.25 0 0021.75 6.993V6.75" /></svg>
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl hover:scale-105 min-h-[260px] group">
+            <span className="text-3xl mb-4 text-[#d6c07a] group-hover:text-[#c4a85a] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0-1.12.6-2.16 1.5-2.81v-.01c.9-.66 2.02-.66 2.91 0l.01.01c.89.65 1.5 1.69 1.5 2.81v.01c0 1.12-.6 2.16-1.5 2.81-.9.66-2.02.66-2.91 0l-.01-.01c-.89-.65-1.5-1.69-1.5-2.81v-.01zM2.25 12c0-1.12.6-2.16 1.5-2.81v-.01c.9-.66 2.02-.66 2.91 0l.01.01c.89.65 1.5 1.69 1.5 2.81v.01c0 1.12-.6 2.16-1.5 2.81-.9.66-2.02.66-2.91 0l-.01-.01c-.89-.65-1.5-1.69-1.5-2.81v-.01zM12.75 6.75c0-1.12.6-2.16 1.5-2.81v-.01c.9-.66 2.02-.66 2.91 0l.01.01c.89.65 1.5 1.69 1.5 2.81v.01c0 1.12-.6 2.16-1.5 2.81-.9.66-2.02.66-2.91 0l-.01-.01c-.89-.65-1.5-1.69-1.5-2.81v-.01zM12.75 12c0-1.12.6-2.16 1.5-2.81v-.01c.9-.66 2.02-.66 2.91 0l.01.01c.89.65 1.5 1.69 1.5 2.81v.01c0 1.12-.6 2.16-1.5 2.81-.9.66-2.02.66-2.91 0l-.01-.01c-.89-.65-1.5-1.69-1.5-2.81v-.01z" /></svg>
             </span>
             <div>
               <div className="text-xl font-serif font-medium font-semibold text-gray-900 mb-2 tracking-wide">CALL US</div>
@@ -281,14 +284,17 @@ export default function Home() {
               <div className="text-base text-gray-700 mb-6 font-serif font-medium">+254798888866<br/>+254799008564</div>
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
-              <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
-              <a href="tel:+254798888866" className="text-[#d6c07a] font-bold hover:underline text-left mt-0">Get in touch</a>
+              <div className="h-1 w-16 bg-[#e5d7a3] mb-2 group-hover:w-20 transition-all duration-300" />
+              <a href="tel:+254798888866" className="bg-gradient-to-r from-[#e5d7a3] to-[#d6c07a] text-[#222] font-bold py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 flex items-center gap-2">
+                <FaPhoneAlt className="w-4 h-4" />
+                Call Us
+              </a>
             </div>
           </div>
           {/* Visit Card */}
-          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl min-h-[260px]">
-            <span className="text-3xl mb-4 text-[#d6c07a]">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#d6c07a" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" /></svg>
+          <div className="bg-[#faf9f5] rounded-2xl shadow-xl p-8 flex flex-col items-start justify-between transition hover:shadow-2xl hover:scale-105 min-h-[260px] group">
+            <span className="text-3xl mb-4 text-[#d6c07a] group-hover:text-[#c4a85a] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" /></svg>
             </span>
             <div>
               <div className="text-xl font-serif font-semibold font-medium text-gray-900 mb-2 tracking-wide">VISIT OUR OFFICES</div>
@@ -296,8 +302,14 @@ export default function Home() {
               <div className="text-base text-gray-700 mb-6 font-serif font-medium">Gatundu Road, Kileleshwa.</div>
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
-              <div className="h-1 w-16 bg-[#e5d7a3] mb-1" />
-              <a href="#" className="text-[#d6c07a] font-bold hover:underline text-left mt-0">Visit Us</a>
+              <div className="h-1 w-16 bg-[#e5d7a3] mb-2 group-hover:w-20 transition-all duration-300" />
+              <a href="#" className="bg-gradient-to-r from-[#e5d7a3] to-[#d6c07a] text-[#222] font-bold py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" />
+                </svg>
+                Visit Us
+              </a>
             </div>
           </div>
         </div>

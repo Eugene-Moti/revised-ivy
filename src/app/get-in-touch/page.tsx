@@ -18,7 +18,7 @@ export default function GetInTouch() {
             className=""
             priority />
           <div className="flex flex-col leading-tight">
-            <span className="ivy-logo-text">The Ivy Group</span>
+            <span className="ivy-logo-text">IVY GROUP</span>
             <span className="ivy-logo-subtitle">Premium Real Estate</span>
           </div>
         </div>

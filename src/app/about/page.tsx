@@ -11,7 +11,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="bg-[#29532a] text-white py-16 px-4">
         <div className="max-w-6xl mx-auto animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gold drop-shadow-lg">About The Ivy Group</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gold drop-shadow-lg">About IVY GROUP</h1>
           <p className="text-lg md:text-xl max-w-3xl text-white/90">
             Redefining luxury living through elegant designs, premium locations, and exceptional craftsmanship. We are Kenya&apos;s premier real estate developers committed to creating homes that inspire.
           </p>
@@ -24,7 +24,7 @@ export default function AboutPage() {
           <div className="flex-1">
             <h2 className="text-3xl font-bold mb-4 text-[#1d2b1a]">Our Story</h2>
             <p className="text-gray-700 mb-4">
-              The Ivy Group stands as Kenya&apos;s premier real estate and property development company, specializing in luxury residences and modern lifestyle spaces. Our commitment to excellence has established us as leaders in delivering high-quality projects that seamlessly blend elegance, comfort, and long-term value.
+              IVY GROUP stands as Kenya&apos;s premier real estate and property development company, specializing in luxury residences and modern lifestyle spaces. Our commitment to excellence has established us as leaders in delivering high-quality projects that seamlessly blend elegance, comfort, and long-term value.
             </p>
             <p className="text-gray-700 mb-6">
               From exclusive apartments in prime Nairobi locations to tailored real estate solutions, we have built our reputation on professionalism, integrity, and unwavering customer satisfaction.
@@ -98,10 +98,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose The Ivy Group */}
+      {/* Why Choose IVY GROUP */}
       <section className="py-16 px-4 bg-[#29532a] text-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-2">Why Choose The Ivy Group</h2>
+          <h2 className="text-3xl font-bold text-center mb-2">Why Choose IVY GROUP</h2>
           <p className="text-center mb-10 text-lg">
             Your trusted partner in luxury real estate
           </p>
