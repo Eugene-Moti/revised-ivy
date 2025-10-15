@@ -111,7 +111,17 @@ export default function BookReservation() {
                 <p className="text-black font-semibold mb-3 flex items-center gap-2">
                   <FaMapMarkerAlt /> {project.location}
                 </p>
-                <p className="text-gray-700 text-sm font-semibold leading-relaxed">{project.description}</p>
+                <p className="text-gray-700 text-sm font-semibold leading-relaxed mb-4">{project.description}</p>
+                <button
+                  onClick={() => setSelectedProject(project.id)}
+                  className={`w-full py-2 px-4 rounded-lg font-semibold transition-all duration-300 ${
+                    selectedProject === project.id
+                      ? 'bg-green-600 text-white'
+                      : 'bg-gold text-black hover:bg-[#bfa14a] hover:text-white'
+                  }`}
+                >
+                  {selectedProject === project.id ? 'Selected' : 'Select Project'}
+                </button>
               </div>
             </div>
           ))}
