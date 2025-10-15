@@ -261,16 +261,15 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
               <div className="h-1 w-16 bg-[#e5d7a3] mb-2 group-hover:w-20 transition-all duration-300" />
-              <button
-                type="button"
+              <a
+                href="mailto:blossomivymarketing@gmail.com"
                 className="bg-gradient-to-r from-[#e5d7a3] to-[#d6c07a] text-[#222] font-bold py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 flex items-center gap-2"
-                onClick={() => setContactModalOpen(true)}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.591 7.591a2.25 2.25 0 01-3.182 0L2.909 8.584A2.25 2.25 0 012.25 6.993V6.75" />
                 </svg>
-                Get in touch
-              </button>
+                Send Email
+              </a>
             </div>
           </div>
           {/* Call Card */}
@@ -303,12 +302,12 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-start gap-1 mt-auto">
               <div className="h-1 w-16 bg-[#e5d7a3] mb-2 group-hover:w-20 transition-all duration-300" />
-              <a href="#" className="bg-gradient-to-r from-[#e5d7a3] to-[#d6c07a] text-[#222] font-bold py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 flex items-center gap-2">
+              <a href="https://www.google.com/maps/place/Blossom+Ivy+Residence/@-1.277136,36.782767,15z/data=!4m6!3m5!1s0x182f170056423b43:0xac4d412392285ae0!8m2!3d-1.277136!4d36.782767!16s%2Fg%2F11c5q8z8z8?entry=ttu" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#e5d7a3] to-[#d6c07a] text-[#222] font-bold py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.5-7.5 12-7.5 12s-7.5-4.5-7.5-12a7.5 7.5 0 1115 0z" />
                 </svg>
-                Visit Us
+                View Map
               </a>
             </div>
           </div>
