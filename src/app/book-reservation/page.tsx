@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaCheckCircle, FaStar } from "react-icons/fa";
 import Image from "next/image";
 
@@ -36,21 +36,21 @@ function MapModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 const projects = [
   {
     id: "blossoms-ivy",
-    name: "Blossoms Ivy",
+    name: "BLOSSOMS IVY",
     location: "Kileleshwa",
     image: "/designs/blossom.jpg",
     description: "Elegant apartments in the heart of Kileleshwa, offering tranquil living with urban convenience."
   },
   {
     id: "luckinn-ivy",
-    name: "Luckinn Ivy",
+    name: "LUCKINN IVY",
     location: "Westlands",
     image: "/designs/Luckinn Ivy.jpg",
     description: "Contemporary living spaces in vibrant Westlands, perfect for modern professionals and families."
   },
   {
     id: "ivy-park",
-    name: "Ivy Park",
+    name: "IVY PARK",
     location: "Kilimani",
     image: "/designs/Exterior_07_IA.png",
     description: "Sophisticated residences in prestigious Kilimani, combining luxury with accessibility."
@@ -60,6 +60,13 @@ const projects = [
 export default function BookReservation() {
   const [selectedProject, setSelectedProject] = useState("");
   const [mapModalOpen, setMapModalOpen] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (selectedProject && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedProject]);
 
   return (
     <div className="bg-gradient-to-b from-[#fcfbf7] via-[#f7f6f2] to-[#fcfbf7] min-h-screen flex flex-col">
@@ -113,7 +120,7 @@ export default function BookReservation() {
 
       {/* Reservation Form Section */}
       <section className="py-16 px-4 max-w-4xl mx-auto w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gold/40 animate-fade-in">
+        <div ref={formRef} className="bg-white rounded-2xl shadow-xl p-8 border border-gold/40 animate-fade-in">
           <h2 className="text-3xl font-serif font-bold text-green-600 mb-8 text-center animate-slide-down">Reservation Details</h2>
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
