@@ -88,7 +88,7 @@ export default function Home() {
             {/* Hero heading removed as requested */}
             <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
               <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Explore Properties</a>
-              <a href="#" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Book Viewing</a>
+              <a href="/book-reservation" className="hero-btn text-xl px-7 py-2 rounded-lg min-w-[170px] text-center">Book Viewing</a>
             </div>
           </div>
           <style jsx global>{`
