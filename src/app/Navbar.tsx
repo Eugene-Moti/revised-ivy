@@ -128,12 +128,7 @@ export default function Navbar() {
                 </ul>
               </div>
 
-              {/* Mobile Menu CTA */}
-              <div className="p-4 border-t border-gold/40">
-                <Link href="/book-reservation" className="block w-full bg-gold text-black py-3 rounded-lg font-semibold text-center hover:bg-[#bfa14a] hover:text-white transition" onClick={toggleNav}>
-                  Book a Reservation
-                </Link>
-              </div>
+
             </div>
           </div>
         </div>
