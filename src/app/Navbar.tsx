@@ -13,11 +13,19 @@ import { useState } from "react";
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
   }
+  @keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
   .animate-fade-in {
     animation: fadeIn 0.3s ease-out;
   }
   .animate-slide-in-right {
     animation: slideInRight 0.5s ease-out;
+  }
+  .animate-slide-in-up {
+    animation: slideInUp 0.5s ease-out forwards;
+    opacity: 0;
   }
 `}</style>
 
@@ -90,38 +98,38 @@ export default function Navbar() {
               {/* Mobile Menu Links */}
               <div className="flex-1 px-4 py-6">
                 <ul className="space-y-6">
-                  <li>
-                    <Link href="/" className="block text-lg font-semibold text-black hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                  <li className="animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
+                    <Link href="/" className="block text-lg font-bold text-black hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       HOME
                     </Link>
                   </li>
-                  <li>
-                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                  <li className="animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
+                    <a href="#" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       BUY
                     </a>
                   </li>
-                  <li>
-                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                  <li className="animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
+                    <a href="#" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       LET
                     </a>
                   </li>
-                  <li>
-                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                  <li className="animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
+                    <a href="#" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       ABOUT
                     </a>
                   </li>
-                  <li>
-                    <Link href="/contact" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                  <li className="animate-slide-in-up" style={{ animationDelay: '0.5s' }}>
+                    <Link href="/contact" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       CONTACT
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/blog" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                  <li className="animate-slide-in-up" style={{ animationDelay: '0.6s' }}>
+                    <Link href="/blog" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       BLOG
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/book-reservation" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                  <li className="animate-slide-in-up" style={{ animationDelay: '0.7s' }}>
+                    <Link href="/book-reservation" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       BOOK RESERVATION
                     </Link>
                   </li>
