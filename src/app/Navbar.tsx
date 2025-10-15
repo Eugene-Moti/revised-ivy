@@ -4,6 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+<style jsx>{`
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+`}</style>
+
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
 
@@ -50,8 +67,8 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {navOpen && (
-        <div className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden" onClick={toggleNav}>
-          <div className="fixed top-0 right-0 w-80 max-w-[90vw] h-full bg-[#fcfbf7] shadow-2xl transform transition-transform duration-300 ease-in-out" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden animate-fade-in" onClick={toggleNav}>
+          <div className="fixed top-0 right-0 w-80 max-w-[90vw] h-full bg-[#fcfbf7] shadow-2xl transform transition-transform duration-500 ease-in-out animate-slide-in-right" onClick={(e) => e.stopPropagation()}>
             <div className="flex flex-col h-full">
               {/* Mobile Menu Header */}
               <div className="flex items-center justify-between p-4 border-b border-gold/40">
@@ -74,33 +91,38 @@ export default function Navbar() {
               <div className="flex-1 px-4 py-6">
                 <ul className="space-y-6">
                   <li>
-                    <Link href="/" className="block text-lg font-semibold text-black hover:text-gold transition-colors" onClick={toggleNav}>
+                    <Link href="/" className="block text-lg font-semibold text-black hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       HOME
                     </Link>
                   </li>
                   <li>
-                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors" onClick={toggleNav}>
+                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       BUY
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors" onClick={toggleNav}>
+                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       LET
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors" onClick={toggleNav}>
+                    <a href="#" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       ABOUT
                     </a>
                   </li>
                   <li>
-                    <Link href="/contact" className="block text-lg text-gray-700 hover:text-gold transition-colors" onClick={toggleNav}>
+                    <Link href="/contact" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       CONTACT
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blog" className="block text-lg text-gray-700 hover:text-gold transition-colors" onClick={toggleNav}>
+                    <Link href="/blog" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       BLOG
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/book-reservation" className="block text-lg text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                      BOOK RESERVATION
                     </Link>
                   </li>
                 </ul>
