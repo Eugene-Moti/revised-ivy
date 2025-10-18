@@ -64,7 +64,7 @@ export default function Navbar() {
               <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">HOME</Link>
             </li>
             <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">BUY</a></li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">LET</a></li>
+            <li><Link href="/let" className="text-black/80 hover:text-black nav-tab relative">LET</Link></li>
             <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">ABOUT</a></li>
             <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">CONTACT</a></li>
             <li><a href="/blog" className="text-black/80 hover:text-black nav-tab relative">BLOG</a></li>
@@ -109,9 +109,9 @@ export default function Navbar() {
                     </a>
                   </li>
                   <li className="animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
-                    <a href="#" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                    <Link href="/let" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       LET
-                    </a>
+                    </Link>
                   </li>
                   <li className="animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
                     <a href="#" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
