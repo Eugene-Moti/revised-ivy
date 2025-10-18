@@ -63,7 +63,7 @@ export default function Navbar() {
             <li>
               <Link href="/" className="text-black font-semibold nav-tab relative" aria-label="Home">HOME</Link>
             </li>
-            <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">BUY</a></li>
+            <li><Link href="/buy" className="text-black/80 hover:text-black nav-tab relative">BUY</Link></li>
             <li><Link href="/let" className="text-black/80 hover:text-black nav-tab relative">LET</Link></li>
             <li><a href="#" className="text-black/80 hover:text-black nav-tab relative">ABOUT</a></li>
             <li><a href="/contact" className="text-black/80 hover:text-black nav-tab relative">CONTACT</a></li>
@@ -104,9 +104,9 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li className="animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
-                    <a href="#" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
+                    <Link href="/buy" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
                       BUY
-                    </a>
+                    </Link>
                   </li>
                   <li className="animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
                     <Link href="/let" className="block text-lg font-bold text-gray-700 hover:text-gold transition-colors transform hover:translate-x-2" onClick={toggleNav}>
